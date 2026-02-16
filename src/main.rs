@@ -1,5 +1,3 @@
-#![feature(try_blocks)]
-
 //! https://cznull.github.io/vsbm wgpu port
 //!
 //! At 1024x1024 surface dimension, DX12 on Windows 10 has ~5 fps higher than
@@ -11,7 +9,7 @@ use std::sync::Arc;
 use vsbm::{Fps, State};
 use wgpu::{Backends, Instance, InstanceDescriptor, InstanceFlags};
 use winit::application::ApplicationHandler;
-use winit::dpi::{LogicalSize, PhysicalSize};
+use winit::dpi::PhysicalSize;
 use winit::event_loop::ActiveEventLoop;
 use winit::window::{Window, WindowId};
 use winit::{
@@ -52,22 +50,18 @@ impl ApplicationHandler for App {
         );
 
         pollster::block_on(async {
-            let result: anyhow::Result<()> = try {
-                // let size = window.inner_size();
-                let size = (1024, 1024);
-                let instance = Instance::new(&InstanceDescriptor {
-                    backends: Backends::from_env().unwrap_or_default(),
-                    flags: InstanceFlags::from_env_or_default(),
-                    memory_budget_thresholds: Default::default(),
-                    backend_options: Default::default(),
-                });
-                let surface = instance.create_surface(Arc::clone(&window))?;
-                let state = State::new(instance, surface, size).await;
-                self.state = Some(state);
-            };
-            result
-        })
-        .unwrap();
+            // let size = window.inner_size();
+            let size = (1024, 1024);
+            let instance = Instance::new(&InstanceDescriptor {
+                backends: Backends::from_env().unwrap_or_default(),
+                flags: InstanceFlags::from_env_or_default(),
+                memory_budget_thresholds: Default::default(),
+                backend_options: Default::default(),
+            });
+            let surface = instance.create_surface(Arc::clone(&window)).unwrap();
+            let state = State::new(instance, surface, size).await;
+            self.state = Some(state);
+        });
 
         window.request_redraw();
         self.window = Some(window);
