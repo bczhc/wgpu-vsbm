@@ -1,0 +1,41 @@
+vkCreateBuffer(device, pCreateInfo, pAllocator, pBuffer) returns VkResult VK_SUCCESS (0):
+vkGetBufferMemoryRequirements(device, buffer, pMemoryRequirements) returns void:
+vkBindBufferMemory(device, buffer, memory, memoryOffset) returns VkResult VK_SUCCESS (0):
+vkBeginCommandBuffer(commandBuffer, pBeginInfo) returns VkResult VK_SUCCESS (0):
+vkCmdPipelineBarrier(commandBuffer, srcStageMask, dstStageMask, dependencyFlags, memoryBarrierCount, pMemoryBarriers, bufferMemoryBarrierCount, pBufferMemoryBarriers, imageMemoryBarrierCount, pImageMemoryBarriers) returns void:
+vkCmdCopyBuffer(commandBuffer, srcBuffer, dstBuffer, regionCount, pRegions) returns void:
+vkWaitSemaphores(device, pWaitInfo, timeout) returns VkResult VK_SUCCESS (0):
+vkAcquireNextImageKHR(device, swapchain, timeout, semaphore, fence, pImageIndex) returns VkResult VK_SUCCESS (0):
+vkWaitForFences(device, fenceCount, pFences, waitAll, timeout) returns VkResult VK_SUCCESS (0):
+vkResetFences(device, fenceCount, pFences) returns VkResult VK_SUCCESS (0):
+vkCreateImageView(device, pCreateInfo, pAllocator, pView) returns VkResult VK_SUCCESS (0):
+vkCreateImageView(device, pCreateInfo, pAllocator, pView) returns VkResult VK_SUCCESS (0):
+vkBeginCommandBuffer(commandBuffer, pBeginInfo) returns VkResult VK_SUCCESS (0):
+vkCreateFramebuffer(device, pCreateInfo, pAllocator, pFramebuffer) returns VkResult VK_SUCCESS (0):
+vkCmdSetViewport(commandBuffer, firstViewport, viewportCount, pViewports) returns void:
+vkCmdSetScissor(commandBuffer, firstScissor, scissorCount, pScissors) returns void:
+vkCmdBeginRenderPass(commandBuffer, pRenderPassBegin, contents) returns void:
+vkCmdBindPipeline(commandBuffer, pipelineBindPoint, pipeline) returns void:
+vkCmdBindDescriptorSets(commandBuffer, pipelineBindPoint, layout, firstSet, descriptorSetCount, pDescriptorSets, dynamicOffsetCount, pDynamicOffsets) returns void:
+vkCmdDraw(commandBuffer, vertexCount, instanceCount, firstVertex, firstInstance) returns void:
+vkCmdEndRenderPass(commandBuffer) returns void:
+vkEndCommandBuffer(commandBuffer) returns VkResult VK_SUCCESS (0):
+vkBeginCommandBuffer(commandBuffer, pBeginInfo) returns VkResult VK_SUCCESS (0):
+vkEndCommandBuffer(commandBuffer) returns VkResult VK_SUCCESS (0):
+vkBeginCommandBuffer(commandBuffer, pBeginInfo) returns VkResult VK_SUCCESS (0):
+vkCmdPipelineBarrier(commandBuffer, srcStageMask, dstStageMask, dependencyFlags, memoryBarrierCount, pMemoryBarriers, bufferMemoryBarrierCount, pBufferMemoryBarriers, imageMemoryBarrierCount, pImageMemoryBarriers) returns void:
+vkCmdPipelineBarrier(commandBuffer, srcStageMask, dstStageMask, dependencyFlags, memoryBarrierCount, pMemoryBarriers, bufferMemoryBarrierCount, pBufferMemoryBarriers, imageMemoryBarrierCount, pImageMemoryBarriers) returns void:
+vkEndCommandBuffer(commandBuffer) returns VkResult VK_SUCCESS (0):
+vkBeginCommandBuffer(commandBuffer, pBeginInfo) returns VkResult VK_SUCCESS (0):
+vkCmdPipelineBarrier(commandBuffer, srcStageMask, dstStageMask, dependencyFlags, memoryBarrierCount, pMemoryBarriers, bufferMemoryBarrierCount, pBufferMemoryBarriers, imageMemoryBarrierCount, pImageMemoryBarriers) returns void:
+vkEndCommandBuffer(commandBuffer) returns VkResult VK_SUCCESS (0):
+vkEndCommandBuffer(commandBuffer) returns VkResult VK_SUCCESS (0):
+vkQueueSubmit(queue, submitCount, pSubmits, fence) returns VkResult VK_SUCCESS (0):
+vkGetSemaphoreCounterValue(device, semaphore, pValue) returns VkResult VK_SUCCESS (0):
+vkResetCommandPool(device, commandPool, flags) returns VkResult VK_SUCCESS (0):
+vkDestroyBuffer(device, buffer, pAllocator) returns void:
+vkDestroyFramebuffer(device, framebuffer, pAllocator) returns void:
+vkResetCommandPool(device, commandPool, flags) returns VkResult VK_SUCCESS (0):
+vkDestroyImageView(device, imageView, pAllocator) returns void:
+vkDestroyImageView(device, imageView, pAllocator) returns void:
+vkQueuePresentKHR(queue, pPresentInfo) returns VkResult VK_SUCCESS (0):
