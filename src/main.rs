@@ -11,7 +11,7 @@ use std::sync::Arc;
 use vsbm::{Fps, State};
 use wgpu::{Backends, Instance, InstanceDescriptor, InstanceFlags};
 use winit::application::ApplicationHandler;
-use winit::dpi::LogicalSize;
+use winit::dpi::{LogicalSize, PhysicalSize};
 use winit::event_loop::ActiveEventLoop;
 use winit::window::{Window, WindowId};
 use winit::{
@@ -34,16 +34,19 @@ struct Args {
 
 impl ApplicationHandler for App {
     fn resumed(&mut self, event_loop: &ActiveEventLoop) {
-        for x in event_loop.available_monitors() {
-            println!("{}", x.scale_factor());
-        }
+        let width = if env::var("WAYLAND_DISPLAY").is_ok() {
+            let my_wl_scale_factor: f64 = 1.333333;
+            (1024.0 / my_wl_scale_factor) as u32
+        } else {
+            1024
+        };
         // Create window object
         let window = Arc::new(
             event_loop
                 .create_window(
                     Window::default_attributes()
                         .with_resizable(false)
-                        .with_inner_size(LogicalSize::new(1024 / 2, 1024 / 2)),
+                        .with_inner_size(PhysicalSize::new(width, width)),
                 )
                 .unwrap(),
         );

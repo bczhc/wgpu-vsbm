@@ -5,6 +5,7 @@ edition = "2024"
 
 [dependencies]
 wgpu = "28.0.0"
+#wgpu = { path = "/mnt/nvme/open-source/wgpu/wgpu" }
 anyhow = "1.0.101"
 pollster = "0.4.0"
 winit = "0.30.12"
