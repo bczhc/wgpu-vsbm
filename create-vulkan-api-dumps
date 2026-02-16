@@ -5,9 +5,11 @@ set -e
 cargo build -r
 cargo build -r --target x86_64-pc-windows-gnu
 
-VK_INSTANCE_LAYERS=VK_LAYER_LUNARG_api_dump target/release/vsbm > /tmp/vsbm.log && mv /tmp/vsbm.log native-vulkan.log
+VK_INSTANCE_LAYERS=VK_LAYER_LUNARG_api_dump target/release/vsbm 10 > /tmp/vsbm.log && mv /tmp/vsbm.log native-vulkan.log
 VK_INSTANCE_LAYERS=VK_LAYER_LUNARG_api_dump WGPU_BACKEND=dx12 \
-    wine target/x86_64-pc-windows-gnu/release/vsbm.exe > /tmp/vsbm.log && mv /tmp/vsbm.log wine-vkd3d.log
+    wine target/x86_64-pc-windows-gnu/release/vsbm.exe 10 > /tmp/vsbm.log && mv /tmp/vsbm.log wine-vkd3d.log
 
-./extract-frame9
+./extract-frame
 
+cat native-vulkan-frame.log | rg '^vk' > native-vulkan-frame-vk-calls.log
+cat wine-vkd3d-frame.log | rg '^vk' > wine-vkd3d-frame-vk-calls.log

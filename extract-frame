@@ -8,14 +8,10 @@ def extract_frame_nine(input_file, output_file)
 
   lines = File.readlines(input_file)
 
-  # 寻找 Frame 9: 的起始位置
-  start_index = lines.find_index { |line| line.match?(/Frame 9:$/) }
-  # 寻找 Frame 10: 的结束位置
-  end_index = lines.find_index { |line| line.match?(/Frame 10:$/) }
+  start_index = lines.find_index { |line| line.match?(/Frame 8:$/) }
+  end_index = lines.find_index { |line| line.match?(/Frame 9:$/) }
 
   if start_index && end_index && end_index > start_index
-    # 提取内容：从 Frame 9 开始，直到 Frame 10 之前
-    # [start_index...end_index] 是左闭右开区间，正好不包含 Frame 10 这一行
     frame_content = lines[start_index...end_index]
 
     File.open(output_file, 'w') do |f|
@@ -23,14 +19,14 @@ def extract_frame_nine(input_file, output_file)
     end
     puts "成功：已提取 #{input_file} 的内容至 #{output_file}"
   else
-    puts "警告：在 #{input_file} 中未找齐 Frame 9 或 Frame 10 的标记"
+    fail
   end
 end
 
 # 处理两个指定的文件
 files_to_process = {
-  "native-vulkan.log" => "native-vulkan-frame9.log",
-  "wine-vkd3d.log" => "wine-vkd3d-frame9.log"
+  "native-vulkan.log" => "native-vulkan-frame.log",
+  "wine-vkd3d.log" => "wine-vkd3d-frame.log"
 }
 
 files_to_process.each do |input, output|
