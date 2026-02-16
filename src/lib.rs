@@ -1,9 +1,11 @@
 use bytemuck::{bytes_of, Pod, Zeroable};
 use std::time::{Duration, Instant};
-use wgpu::{
-    include_wgsl, Instance, LoadOpDontCare, PipelineCompilationOptions, Surface, TextureFormat,
-};
 use wgpu::util::RenderEncoder;
+use wgpu::{
+    include_wgsl, Device, Extent3d, Instance, LoadOpDontCare, Origin3d, PipelineCompilationOptions,
+    Surface, TexelCopyTextureInfo, Texture, TextureAspect, TextureDescriptor,
+    TextureDimension, TextureFormat, TextureUsages, TextureView, TextureViewDescriptor,
+};
 
 macro_rules! default {
     () => {
@@ -28,7 +30,6 @@ pub struct Immediates {
 }
 
 pub struct State {
-    once: bool,
     surface: wgpu::Surface<'static>,
     device: wgpu::Device,
     queue: wgpu::Queue,
@@ -37,6 +38,8 @@ pub struct State {
     elapsed: f32,
     texture_format: wgpu::TextureFormat,
     immediates: Immediates,
+    offscreen_texture: Texture,
+    offscreen_view: TextureView,
 }
 
 pub struct Config {
@@ -54,7 +57,7 @@ impl Default for Config {
 impl State {
     pub fn configure_surface(&self) {
         let surface_config = wgpu::SurfaceConfiguration {
-            usage: wgpu::TextureUsages::RENDER_ATTACHMENT,
+            usage: wgpu::TextureUsages::RENDER_ATTACHMENT | TextureUsages::COPY_DST,
             format: self.texture_format,
             view_formats: vec![self.texture_format],
             alpha_mode: wgpu::CompositeAlphaMode::Auto,
@@ -89,7 +92,9 @@ impl State {
         // Do not use srgb suffix. This makes wgpu think all colors we give are already in a
         // non-linear sRGB space and do not do an automatic gamma correction.
         let mut texture_format = TextureFormat::Bgra8Unorm;
-        if !surface_caps.formats.iter().any(|x| x == &texture_format) {
+        if surface_caps.formats.len() != 0
+            && !surface_caps.formats.iter().any(|x| x == &texture_format)
+        {
             texture_format = surface_caps.formats[0].remove_srgb_suffix();
         }
 
@@ -99,21 +104,6 @@ impl State {
         // let shader_fs = device.create_shader_module(include_spirv!("../fs.spv"));
         let shader_vs = &shader;
         let shader_fs = &shader;
-
-        // let uniform_bind_group_layout =
-        //     device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
-        //         entries: &[wgpu::BindGroupLayoutEntry {
-        //             binding: 0,
-        //             visibility: wgpu::ShaderStages::FRAGMENT,
-        //             ty: wgpu::BindingType::Buffer {
-        //                 ty: wgpu::BufferBindingType::Uniform,
-        //                 has_dynamic_offset: false,
-        //                 min_binding_size: None,
-        //             },
-        //             count: None,
-        //         }],
-        //         label: Some("uniform_bind_group_layout"),
-        //     });
 
         let render_pipeline_layout =
             device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
@@ -152,8 +142,10 @@ impl State {
             cache: None,
         });
 
+        let (offscreen_texture, offscreen_view) =
+            Self::create_offscreen_texture(&device, texture_format, size);
+
         let state = Self {
-            once: false,
             surface,
             device,
             queue,
@@ -162,13 +154,42 @@ impl State {
             elapsed: 0f32,
             texture_format,
             immediates: Zeroable::zeroed(),
+            offscreen_texture,
+            offscreen_view,
         };
         state.configure_surface();
         state
     }
 
+    fn create_offscreen_texture(
+        device: &Device,
+        texture_format: TextureFormat,
+        size: (u32, u32),
+    ) -> (Texture, TextureView) {
+        let offscreen_texture = device.create_texture(&TextureDescriptor {
+            label: None,
+            size: Extent3d {
+                width: size.0,
+                height: size.1,
+                depth_or_array_layers: 1,
+            },
+            mip_level_count: 1,
+            sample_count: 1,
+            dimension: TextureDimension::D2,
+            format: texture_format,
+            usage: TextureUsages::RENDER_ATTACHMENT | TextureUsages::COPY_SRC,
+            view_formats: &[],
+        });
+        let offscreen_view = offscreen_texture.create_view(&TextureViewDescriptor { ..default!() });
+        (offscreen_texture, offscreen_view)
+    }
+
     pub fn resize(&mut self, new_size: (u32, u32)) {
         self.size = new_size;
+
+        let x = Self::create_offscreen_texture(&self.device, self.texture_format, self.size);
+        self.offscreen_texture = x.0;
+        self.offscreen_view = x.1;
 
         // reconfigure the surface
         self.configure_surface();
@@ -210,10 +231,6 @@ impl State {
             len,
             padding5: 0.0,
         };
-
-        // if !self.once {
-        // self.once = true;
-        // }
     }
 
     pub fn frame(
@@ -221,16 +238,6 @@ impl State {
         before_submit_callback: impl FnOnce(),
     ) -> Result<(), wgpu::SurfaceError> {
         self.update();
-
-        let surface_texture = self.surface.get_current_texture()?;
-
-        let texture_view = surface_texture
-            .texture
-            .create_view(&wgpu::TextureViewDescriptor {
-                format: Some(self.texture_format),
-                ..Default::default()
-            });
-
         let mut encoder = self
             .device
             .create_command_encoder(&wgpu::CommandEncoderDescriptor {
@@ -241,7 +248,7 @@ impl State {
             let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
                 label: Some("Render Pass"),
                 color_attachments: &[Some(wgpu::RenderPassColorAttachment {
-                    view: &texture_view,
+                    view: &self.offscreen_view,
                     depth_slice: None,
                     resolve_target: None,
                     ops: wgpu::Operations {
@@ -259,6 +266,32 @@ impl State {
             pass.set_immediates(0, bytes_of(&self.immediates));
             pass.draw(0..6, 0..1);
         }
+
+        let surface_texture = self.surface.get_current_texture()?;
+        let surface_view = surface_texture.texture.create_view(&TextureViewDescriptor {
+            format: Some(self.texture_format),
+            ..default!()
+        });
+
+        encoder.copy_texture_to_texture(
+            TexelCopyTextureInfo {
+                texture: &self.offscreen_texture,
+                mip_level: 0,
+                origin: Origin3d::ZERO,
+                aspect: TextureAspect::All,
+            },
+            TexelCopyTextureInfo {
+                texture: &surface_texture.texture,
+                mip_level: 0,
+                origin: Origin3d::ZERO,
+                aspect: TextureAspect::All,
+            },
+            Extent3d {
+                width: self.size.0,
+                height: self.size.1,
+                depth_or_array_layers: 1,
+            },
+        );
         let command_buffer = encoder.finish();
 
         before_submit_callback();

@@ -24,7 +24,12 @@ struct App {
     pub state: Option<State>,
     pub window: Option<Arc<Window>>,
     pub fps: Option<Fps>,
-    pub frame_counter: usize,
+    pub max_frame: usize,
+}
+
+#[derive(Parser)]
+struct Args {
+    max_frame: Option<usize>,
 }
 
 impl ApplicationHandler for App {
@@ -86,9 +91,10 @@ impl ApplicationHandler for App {
                     Err(wgpu::SurfaceError::OutOfMemory) => event_loop.exit(),
                     Err(e) => eprintln!("{:?}", e),
                 }
-                self.frame_counter += 1;
-                if self.frame_counter == 10 {
+                self.max_frame -= 1;
+                if self.max_frame == 0 {
                     event_loop.exit();
+                    self.max_frame = usize::MAX;
                 }
 
                 // print the FPS
@@ -110,6 +116,7 @@ impl ApplicationHandler for App {
 }
 
 pub fn main() {
+    let args = Args::parse();
     unsafe {
         env::set_var("RUST_LOG", "info");
     }
@@ -120,5 +127,6 @@ pub fn main() {
     event_loop.set_control_flow(ControlFlow::Wait);
 
     let mut app = App::default();
+    app.max_frame = args.max_frame.unwrap_or(usize::MAX);
     event_loop.run_app(&mut app).unwrap();
 }
