@@ -1,0 +1,948 @@
+Thread 0, Frame 9:
+vkCmdSetViewport(commandBuffer, firstViewport, viewportCount, pViewports) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x555577421370
+    firstViewport:                  uint32_t = 0
+    viewportCount:                  uint32_t = 16
+    pViewports:                     const VkViewport* = 0x7ffffe2fa850
+        pViewports[0]:                  const VkViewport = 0x7ffffe2fa850:
+            x:                              float = 0
+            y:                              float = 1024
+            width:                          float = 1024
+            height:                         float = -1024
+            minDepth:                       float = 0
+            maxDepth:                       float = 1
+        pViewports[1]:                  const VkViewport = 0x7ffffe2fa868:
+            x:                              float = 0
+            y:                              float = 0
+            width:                          float = 1
+            height:                         float = 1
+            minDepth:                       float = 0
+            maxDepth:                       float = 0
+        pViewports[2]:                  const VkViewport = 0x7ffffe2fa880:
+            x:                              float = 0
+            y:                              float = 0
+            width:                          float = 1
+            height:                         float = 1
+            minDepth:                       float = 0
+            maxDepth:                       float = 0
+        pViewports[3]:                  const VkViewport = 0x7ffffe2fa898:
+            x:                              float = 0
+            y:                              float = 0
+            width:                          float = 1
+            height:                         float = 1
+            minDepth:                       float = 0
+            maxDepth:                       float = 0
+        pViewports[4]:                  const VkViewport = 0x7ffffe2fa8b0:
+            x:                              float = 0
+            y:                              float = 0
+            width:                          float = 1
+            height:                         float = 1
+            minDepth:                       float = 0
+            maxDepth:                       float = 0
+        pViewports[5]:                  const VkViewport = 0x7ffffe2fa8c8:
+            x:                              float = 0
+            y:                              float = 0
+            width:                          float = 1
+            height:                         float = 1
+            minDepth:                       float = 0
+            maxDepth:                       float = 0
+        pViewports[6]:                  const VkViewport = 0x7ffffe2fa8e0:
+            x:                              float = 0
+            y:                              float = 0
+            width:                          float = 1
+            height:                         float = 1
+            minDepth:                       float = 0
+            maxDepth:                       float = 0
+        pViewports[7]:                  const VkViewport = 0x7ffffe2fa8f8:
+            x:                              float = 0
+            y:                              float = 0
+            width:                          float = 1
+            height:                         float = 1
+            minDepth:                       float = 0
+            maxDepth:                       float = 0
+        pViewports[8]:                  const VkViewport = 0x7ffffe2fa910:
+            x:                              float = 0
+            y:                              float = 0
+            width:                          float = 1
+            height:                         float = 1
+            minDepth:                       float = 0
+            maxDepth:                       float = 0
+        pViewports[9]:                  const VkViewport = 0x7ffffe2fa928:
+            x:                              float = 0
+            y:                              float = 0
+            width:                          float = 1
+            height:                         float = 1
+            minDepth:                       float = 0
+            maxDepth:                       float = 0
+        pViewports[10]:                 const VkViewport = 0x7ffffe2fa940:
+            x:                              float = 0
+            y:                              float = 0
+            width:                          float = 1
+            height:                         float = 1
+            minDepth:                       float = 0
+            maxDepth:                       float = 0
+        pViewports[11]:                 const VkViewport = 0x7ffffe2fa958:
+            x:                              float = 0
+            y:                              float = 0
+            width:                          float = 1
+            height:                         float = 1
+            minDepth:                       float = 0
+            maxDepth:                       float = 0
+        pViewports[12]:                 const VkViewport = 0x7ffffe2fa970:
+            x:                              float = 0
+            y:                              float = 0
+            width:                          float = 1
+            height:                         float = 1
+            minDepth:                       float = 0
+            maxDepth:                       float = 0
+        pViewports[13]:                 const VkViewport = 0x7ffffe2fa988:
+            x:                              float = 0
+            y:                              float = 0
+            width:                          float = 1
+            height:                         float = 1
+            minDepth:                       float = 0
+            maxDepth:                       float = 0
+        pViewports[14]:                 const VkViewport = 0x7ffffe2fa9a0:
+            x:                              float = 0
+            y:                              float = 0
+            width:                          float = 1
+            height:                         float = 1
+            minDepth:                       float = 0
+            maxDepth:                       float = 0
+        pViewports[15]:                 const VkViewport = 0x7ffffe2fa9b8:
+            x:                              float = 0
+            y:                              float = 0
+            width:                          float = 1
+            height:                         float = 1
+            minDepth:                       float = 0
+            maxDepth:                       float = 0
+
+Thread 0, Frame 9:
+vkCmdSetScissor(commandBuffer, firstScissor, scissorCount, pScissors) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x555577421370
+    firstScissor:                   uint32_t = 0
+    scissorCount:                   uint32_t = 16
+    pScissors:                      const VkRect2D* = 0x7ffffe2fa8f0
+        pScissors[0]:                   const VkRect2D = 0x7ffffe2fa8f0:
+            offset:                         VkOffset2D = 0:
+                x:                              int32_t = 0
+                y:                              int32_t = 0
+            extent:                         VkExtent2D = 0:
+                width:                          uint32_t = 1024
+                height:                         uint32_t = 1024
+        pScissors[1]:                   const VkRect2D = 0x7ffffe2fa900:
+            offset:                         VkOffset2D = 0:
+                x:                              int32_t = 0
+                y:                              int32_t = 0
+            extent:                         VkExtent2D = 0:
+                width:                          uint32_t = 0
+                height:                         uint32_t = 0
+        pScissors[2]:                   const VkRect2D = 0x7ffffe2fa910:
+            offset:                         VkOffset2D = 0:
+                x:                              int32_t = 0
+                y:                              int32_t = 0
+            extent:                         VkExtent2D = 0:
+                width:                          uint32_t = 0
+                height:                         uint32_t = 0
+        pScissors[3]:                   const VkRect2D = 0x7ffffe2fa920:
+            offset:                         VkOffset2D = 0:
+                x:                              int32_t = 0
+                y:                              int32_t = 0
+            extent:                         VkExtent2D = 0:
+                width:                          uint32_t = 0
+                height:                         uint32_t = 0
+        pScissors[4]:                   const VkRect2D = 0x7ffffe2fa930:
+            offset:                         VkOffset2D = 0:
+                x:                              int32_t = 0
+                y:                              int32_t = 0
+            extent:                         VkExtent2D = 0:
+                width:                          uint32_t = 0
+                height:                         uint32_t = 0
+        pScissors[5]:                   const VkRect2D = 0x7ffffe2fa940:
+            offset:                         VkOffset2D = 0:
+                x:                              int32_t = 0
+                y:                              int32_t = 0
+            extent:                         VkExtent2D = 0:
+                width:                          uint32_t = 0
+                height:                         uint32_t = 0
+        pScissors[6]:                   const VkRect2D = 0x7ffffe2fa950:
+            offset:                         VkOffset2D = 0:
+                x:                              int32_t = 0
+                y:                              int32_t = 0
+            extent:                         VkExtent2D = 0:
+                width:                          uint32_t = 0
+                height:                         uint32_t = 0
+        pScissors[7]:                   const VkRect2D = 0x7ffffe2fa960:
+            offset:                         VkOffset2D = 0:
+                x:                              int32_t = 0
+                y:                              int32_t = 0
+            extent:                         VkExtent2D = 0:
+                width:                          uint32_t = 0
+                height:                         uint32_t = 0
+        pScissors[8]:                   const VkRect2D = 0x7ffffe2fa970:
+            offset:                         VkOffset2D = 0:
+                x:                              int32_t = 0
+                y:                              int32_t = 0
+            extent:                         VkExtent2D = 0:
+                width:                          uint32_t = 0
+                height:                         uint32_t = 0
+        pScissors[9]:                   const VkRect2D = 0x7ffffe2fa980:
+            offset:                         VkOffset2D = 0:
+                x:                              int32_t = 0
+                y:                              int32_t = 0
+            extent:                         VkExtent2D = 0:
+                width:                          uint32_t = 0
+                height:                         uint32_t = 0
+        pScissors[10]:                  const VkRect2D = 0x7ffffe2fa990:
+            offset:                         VkOffset2D = 0:
+                x:                              int32_t = 0
+                y:                              int32_t = 0
+            extent:                         VkExtent2D = 0:
+                width:                          uint32_t = 0
+                height:                         uint32_t = 0
+        pScissors[11]:                  const VkRect2D = 0x7ffffe2fa9a0:
+            offset:                         VkOffset2D = 0:
+                x:                              int32_t = 0
+                y:                              int32_t = 0
+            extent:                         VkExtent2D = 0:
+                width:                          uint32_t = 0
+                height:                         uint32_t = 0
+        pScissors[12]:                  const VkRect2D = 0x7ffffe2fa9b0:
+            offset:                         VkOffset2D = 0:
+                x:                              int32_t = 0
+                y:                              int32_t = 0
+            extent:                         VkExtent2D = 0:
+                width:                          uint32_t = 0
+                height:                         uint32_t = 0
+        pScissors[13]:                  const VkRect2D = 0x7ffffe2fa9c0:
+            offset:                         VkOffset2D = 0:
+                x:                              int32_t = 0
+                y:                              int32_t = 0
+            extent:                         VkExtent2D = 0:
+                width:                          uint32_t = 0
+                height:                         uint32_t = 0
+        pScissors[14]:                  const VkRect2D = 0x7ffffe2fa9d0:
+            offset:                         VkOffset2D = 0:
+                x:                              int32_t = 0
+                y:                              int32_t = 0
+            extent:                         VkExtent2D = 0:
+                width:                          uint32_t = 0
+                height:                         uint32_t = 0
+        pScissors[15]:                  const VkRect2D = 0x7ffffe2fa9e0:
+            offset:                         VkOffset2D = 0:
+                x:                              int32_t = 0
+                y:                              int32_t = 0
+            extent:                         VkExtent2D = 0:
+                width:                          uint32_t = 0
+                height:                         uint32_t = 0
+
+Thread 0, Frame 9:
+vkCmdPushConstants(commandBuffer, layout, stageFlags, offset, size, pValues) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x555577421370
+    layout:                         VkPipelineLayout = 0x5555771374d0
+    stageFlags:                     VkShaderStageFlags = 2147483647 (VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_TESSELLATION_CONTROL_BIT | VK_SHADER_STAGE_TESSELLATION_EVALUATION_BIT | VK_SHADER_STAGE_GEOMETRY_BIT | VK_SHADER_STAGE_FRAGMENT_BIT | VK_SHADER_STAGE_COMPUTE_BIT | VK_SHADER_STAGE_ALL | VK_SHADER_STAGE_RAYGEN_BIT_KHR | VK_SHADER_STAGE_ANY_HIT_BIT_KHR | VK_SHADER_STAGE_CLOSEST_HIT_BIT_KHR | VK_SHADER_STAGE_MISS_BIT_KHR | VK_SHADER_STAGE_INTERSECTION_BIT_KHR | VK_SHADER_STAGE_CALLABLE_BIT_KHR | VK_SHADER_STAGE_TASK_BIT_EXT | VK_SHADER_STAGE_MESH_BIT_EXT | VK_SHADER_STAGE_SUBPASS_SHADING_BIT_HUAWEI | VK_SHADER_STAGE_CLUSTER_CULLING_BIT_HUAWEI)
+    offset:                         uint32_t = 0
+    size:                           uint32_t = 4
+    pValues:                        const void* = 0x7ffffe2fab40
+
+Thread 0, Frame 9:
+vkCmdPushConstants(commandBuffer, layout, stageFlags, offset, size, pValues) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x555577421370
+    layout:                         VkPipelineLayout = 0x5555771374d0
+    stageFlags:                     VkShaderStageFlags = 2147483647 (VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_TESSELLATION_CONTROL_BIT | VK_SHADER_STAGE_TESSELLATION_EVALUATION_BIT | VK_SHADER_STAGE_GEOMETRY_BIT | VK_SHADER_STAGE_FRAGMENT_BIT | VK_SHADER_STAGE_COMPUTE_BIT | VK_SHADER_STAGE_ALL | VK_SHADER_STAGE_RAYGEN_BIT_KHR | VK_SHADER_STAGE_ANY_HIT_BIT_KHR | VK_SHADER_STAGE_CLOSEST_HIT_BIT_KHR | VK_SHADER_STAGE_MISS_BIT_KHR | VK_SHADER_STAGE_INTERSECTION_BIT_KHR | VK_SHADER_STAGE_CALLABLE_BIT_KHR | VK_SHADER_STAGE_TASK_BIT_EXT | VK_SHADER_STAGE_MESH_BIT_EXT | VK_SHADER_STAGE_SUBPASS_SHADING_BIT_HUAWEI | VK_SHADER_STAGE_CLUSTER_CULLING_BIT_HUAWEI)
+    offset:                         uint32_t = 4
+    size:                           uint32_t = 4
+    pValues:                        const void* = 0x7ffffe2fab40
+
+Thread 0, Frame 9:
+vkCmdPushConstants(commandBuffer, layout, stageFlags, offset, size, pValues) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x555577421370
+    layout:                         VkPipelineLayout = 0x5555771374d0
+    stageFlags:                     VkShaderStageFlags = 2147483647 (VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_TESSELLATION_CONTROL_BIT | VK_SHADER_STAGE_TESSELLATION_EVALUATION_BIT | VK_SHADER_STAGE_GEOMETRY_BIT | VK_SHADER_STAGE_FRAGMENT_BIT | VK_SHADER_STAGE_COMPUTE_BIT | VK_SHADER_STAGE_ALL | VK_SHADER_STAGE_RAYGEN_BIT_KHR | VK_SHADER_STAGE_ANY_HIT_BIT_KHR | VK_SHADER_STAGE_CLOSEST_HIT_BIT_KHR | VK_SHADER_STAGE_MISS_BIT_KHR | VK_SHADER_STAGE_INTERSECTION_BIT_KHR | VK_SHADER_STAGE_CALLABLE_BIT_KHR | VK_SHADER_STAGE_TASK_BIT_EXT | VK_SHADER_STAGE_MESH_BIT_EXT | VK_SHADER_STAGE_SUBPASS_SHADING_BIT_HUAWEI | VK_SHADER_STAGE_CLUSTER_CULLING_BIT_HUAWEI)
+    offset:                         uint32_t = 8
+    size:                           uint32_t = 4
+    pValues:                        const void* = 0x7ffffe2fab40
+
+Thread 0, Frame 9:
+vkCmdPushConstants(commandBuffer, layout, stageFlags, offset, size, pValues) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x555577421370
+    layout:                         VkPipelineLayout = 0x5555771374d0
+    stageFlags:                     VkShaderStageFlags = 2147483647 (VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_TESSELLATION_CONTROL_BIT | VK_SHADER_STAGE_TESSELLATION_EVALUATION_BIT | VK_SHADER_STAGE_GEOMETRY_BIT | VK_SHADER_STAGE_FRAGMENT_BIT | VK_SHADER_STAGE_COMPUTE_BIT | VK_SHADER_STAGE_ALL | VK_SHADER_STAGE_RAYGEN_BIT_KHR | VK_SHADER_STAGE_ANY_HIT_BIT_KHR | VK_SHADER_STAGE_CLOSEST_HIT_BIT_KHR | VK_SHADER_STAGE_MISS_BIT_KHR | VK_SHADER_STAGE_INTERSECTION_BIT_KHR | VK_SHADER_STAGE_CALLABLE_BIT_KHR | VK_SHADER_STAGE_TASK_BIT_EXT | VK_SHADER_STAGE_MESH_BIT_EXT | VK_SHADER_STAGE_SUBPASS_SHADING_BIT_HUAWEI | VK_SHADER_STAGE_CLUSTER_CULLING_BIT_HUAWEI)
+    offset:                         uint32_t = 12
+    size:                           uint32_t = 4
+    pValues:                        const void* = 0x7ffffe2fab40
+
+Thread 0, Frame 9:
+vkCmdPushConstants(commandBuffer, layout, stageFlags, offset, size, pValues) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x555577421370
+    layout:                         VkPipelineLayout = 0x5555771374d0
+    stageFlags:                     VkShaderStageFlags = 2147483647 (VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_TESSELLATION_CONTROL_BIT | VK_SHADER_STAGE_TESSELLATION_EVALUATION_BIT | VK_SHADER_STAGE_GEOMETRY_BIT | VK_SHADER_STAGE_FRAGMENT_BIT | VK_SHADER_STAGE_COMPUTE_BIT | VK_SHADER_STAGE_ALL | VK_SHADER_STAGE_RAYGEN_BIT_KHR | VK_SHADER_STAGE_ANY_HIT_BIT_KHR | VK_SHADER_STAGE_CLOSEST_HIT_BIT_KHR | VK_SHADER_STAGE_MISS_BIT_KHR | VK_SHADER_STAGE_INTERSECTION_BIT_KHR | VK_SHADER_STAGE_CALLABLE_BIT_KHR | VK_SHADER_STAGE_TASK_BIT_EXT | VK_SHADER_STAGE_MESH_BIT_EXT | VK_SHADER_STAGE_SUBPASS_SHADING_BIT_HUAWEI | VK_SHADER_STAGE_CLUSTER_CULLING_BIT_HUAWEI)
+    offset:                         uint32_t = 16
+    size:                           uint32_t = 4
+    pValues:                        const void* = 0x7ffffe2fab40
+
+Thread 0, Frame 9:
+vkCmdPushConstants(commandBuffer, layout, stageFlags, offset, size, pValues) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x555577421370
+    layout:                         VkPipelineLayout = 0x5555771374d0
+    stageFlags:                     VkShaderStageFlags = 2147483647 (VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_TESSELLATION_CONTROL_BIT | VK_SHADER_STAGE_TESSELLATION_EVALUATION_BIT | VK_SHADER_STAGE_GEOMETRY_BIT | VK_SHADER_STAGE_FRAGMENT_BIT | VK_SHADER_STAGE_COMPUTE_BIT | VK_SHADER_STAGE_ALL | VK_SHADER_STAGE_RAYGEN_BIT_KHR | VK_SHADER_STAGE_ANY_HIT_BIT_KHR | VK_SHADER_STAGE_CLOSEST_HIT_BIT_KHR | VK_SHADER_STAGE_MISS_BIT_KHR | VK_SHADER_STAGE_INTERSECTION_BIT_KHR | VK_SHADER_STAGE_CALLABLE_BIT_KHR | VK_SHADER_STAGE_TASK_BIT_EXT | VK_SHADER_STAGE_MESH_BIT_EXT | VK_SHADER_STAGE_SUBPASS_SHADING_BIT_HUAWEI | VK_SHADER_STAGE_CLUSTER_CULLING_BIT_HUAWEI)
+    offset:                         uint32_t = 20
+    size:                           uint32_t = 4
+    pValues:                        const void* = 0x7ffffe2fab40
+
+Thread 0, Frame 9:
+vkCmdPushConstants(commandBuffer, layout, stageFlags, offset, size, pValues) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x555577421370
+    layout:                         VkPipelineLayout = 0x5555771374d0
+    stageFlags:                     VkShaderStageFlags = 2147483647 (VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_TESSELLATION_CONTROL_BIT | VK_SHADER_STAGE_TESSELLATION_EVALUATION_BIT | VK_SHADER_STAGE_GEOMETRY_BIT | VK_SHADER_STAGE_FRAGMENT_BIT | VK_SHADER_STAGE_COMPUTE_BIT | VK_SHADER_STAGE_ALL | VK_SHADER_STAGE_RAYGEN_BIT_KHR | VK_SHADER_STAGE_ANY_HIT_BIT_KHR | VK_SHADER_STAGE_CLOSEST_HIT_BIT_KHR | VK_SHADER_STAGE_MISS_BIT_KHR | VK_SHADER_STAGE_INTERSECTION_BIT_KHR | VK_SHADER_STAGE_CALLABLE_BIT_KHR | VK_SHADER_STAGE_TASK_BIT_EXT | VK_SHADER_STAGE_MESH_BIT_EXT | VK_SHADER_STAGE_SUBPASS_SHADING_BIT_HUAWEI | VK_SHADER_STAGE_CLUSTER_CULLING_BIT_HUAWEI)
+    offset:                         uint32_t = 24
+    size:                           uint32_t = 4
+    pValues:                        const void* = 0x7ffffe2fab40
+
+Thread 0, Frame 9:
+vkCmdPushConstants(commandBuffer, layout, stageFlags, offset, size, pValues) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x555577421370
+    layout:                         VkPipelineLayout = 0x5555771374d0
+    stageFlags:                     VkShaderStageFlags = 2147483647 (VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_TESSELLATION_CONTROL_BIT | VK_SHADER_STAGE_TESSELLATION_EVALUATION_BIT | VK_SHADER_STAGE_GEOMETRY_BIT | VK_SHADER_STAGE_FRAGMENT_BIT | VK_SHADER_STAGE_COMPUTE_BIT | VK_SHADER_STAGE_ALL | VK_SHADER_STAGE_RAYGEN_BIT_KHR | VK_SHADER_STAGE_ANY_HIT_BIT_KHR | VK_SHADER_STAGE_CLOSEST_HIT_BIT_KHR | VK_SHADER_STAGE_MISS_BIT_KHR | VK_SHADER_STAGE_INTERSECTION_BIT_KHR | VK_SHADER_STAGE_CALLABLE_BIT_KHR | VK_SHADER_STAGE_TASK_BIT_EXT | VK_SHADER_STAGE_MESH_BIT_EXT | VK_SHADER_STAGE_SUBPASS_SHADING_BIT_HUAWEI | VK_SHADER_STAGE_CLUSTER_CULLING_BIT_HUAWEI)
+    offset:                         uint32_t = 28
+    size:                           uint32_t = 4
+    pValues:                        const void* = 0x7ffffe2fab40
+
+Thread 0, Frame 9:
+vkCmdPushConstants(commandBuffer, layout, stageFlags, offset, size, pValues) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x555577421370
+    layout:                         VkPipelineLayout = 0x5555771374d0
+    stageFlags:                     VkShaderStageFlags = 2147483647 (VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_TESSELLATION_CONTROL_BIT | VK_SHADER_STAGE_TESSELLATION_EVALUATION_BIT | VK_SHADER_STAGE_GEOMETRY_BIT | VK_SHADER_STAGE_FRAGMENT_BIT | VK_SHADER_STAGE_COMPUTE_BIT | VK_SHADER_STAGE_ALL | VK_SHADER_STAGE_RAYGEN_BIT_KHR | VK_SHADER_STAGE_ANY_HIT_BIT_KHR | VK_SHADER_STAGE_CLOSEST_HIT_BIT_KHR | VK_SHADER_STAGE_MISS_BIT_KHR | VK_SHADER_STAGE_INTERSECTION_BIT_KHR | VK_SHADER_STAGE_CALLABLE_BIT_KHR | VK_SHADER_STAGE_TASK_BIT_EXT | VK_SHADER_STAGE_MESH_BIT_EXT | VK_SHADER_STAGE_SUBPASS_SHADING_BIT_HUAWEI | VK_SHADER_STAGE_CLUSTER_CULLING_BIT_HUAWEI)
+    offset:                         uint32_t = 32
+    size:                           uint32_t = 4
+    pValues:                        const void* = 0x7ffffe2fab40
+
+Thread 0, Frame 9:
+vkCmdPushConstants(commandBuffer, layout, stageFlags, offset, size, pValues) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x555577421370
+    layout:                         VkPipelineLayout = 0x5555771374d0
+    stageFlags:                     VkShaderStageFlags = 2147483647 (VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_TESSELLATION_CONTROL_BIT | VK_SHADER_STAGE_TESSELLATION_EVALUATION_BIT | VK_SHADER_STAGE_GEOMETRY_BIT | VK_SHADER_STAGE_FRAGMENT_BIT | VK_SHADER_STAGE_COMPUTE_BIT | VK_SHADER_STAGE_ALL | VK_SHADER_STAGE_RAYGEN_BIT_KHR | VK_SHADER_STAGE_ANY_HIT_BIT_KHR | VK_SHADER_STAGE_CLOSEST_HIT_BIT_KHR | VK_SHADER_STAGE_MISS_BIT_KHR | VK_SHADER_STAGE_INTERSECTION_BIT_KHR | VK_SHADER_STAGE_CALLABLE_BIT_KHR | VK_SHADER_STAGE_TASK_BIT_EXT | VK_SHADER_STAGE_MESH_BIT_EXT | VK_SHADER_STAGE_SUBPASS_SHADING_BIT_HUAWEI | VK_SHADER_STAGE_CLUSTER_CULLING_BIT_HUAWEI)
+    offset:                         uint32_t = 36
+    size:                           uint32_t = 4
+    pValues:                        const void* = 0x7ffffe2fab40
+
+Thread 0, Frame 9:
+vkCmdPushConstants(commandBuffer, layout, stageFlags, offset, size, pValues) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x555577421370
+    layout:                         VkPipelineLayout = 0x5555771374d0
+    stageFlags:                     VkShaderStageFlags = 2147483647 (VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_TESSELLATION_CONTROL_BIT | VK_SHADER_STAGE_TESSELLATION_EVALUATION_BIT | VK_SHADER_STAGE_GEOMETRY_BIT | VK_SHADER_STAGE_FRAGMENT_BIT | VK_SHADER_STAGE_COMPUTE_BIT | VK_SHADER_STAGE_ALL | VK_SHADER_STAGE_RAYGEN_BIT_KHR | VK_SHADER_STAGE_ANY_HIT_BIT_KHR | VK_SHADER_STAGE_CLOSEST_HIT_BIT_KHR | VK_SHADER_STAGE_MISS_BIT_KHR | VK_SHADER_STAGE_INTERSECTION_BIT_KHR | VK_SHADER_STAGE_CALLABLE_BIT_KHR | VK_SHADER_STAGE_TASK_BIT_EXT | VK_SHADER_STAGE_MESH_BIT_EXT | VK_SHADER_STAGE_SUBPASS_SHADING_BIT_HUAWEI | VK_SHADER_STAGE_CLUSTER_CULLING_BIT_HUAWEI)
+    offset:                         uint32_t = 40
+    size:                           uint32_t = 4
+    pValues:                        const void* = 0x7ffffe2fab40
+
+Thread 0, Frame 9:
+vkCmdPushConstants(commandBuffer, layout, stageFlags, offset, size, pValues) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x555577421370
+    layout:                         VkPipelineLayout = 0x5555771374d0
+    stageFlags:                     VkShaderStageFlags = 2147483647 (VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_TESSELLATION_CONTROL_BIT | VK_SHADER_STAGE_TESSELLATION_EVALUATION_BIT | VK_SHADER_STAGE_GEOMETRY_BIT | VK_SHADER_STAGE_FRAGMENT_BIT | VK_SHADER_STAGE_COMPUTE_BIT | VK_SHADER_STAGE_ALL | VK_SHADER_STAGE_RAYGEN_BIT_KHR | VK_SHADER_STAGE_ANY_HIT_BIT_KHR | VK_SHADER_STAGE_CLOSEST_HIT_BIT_KHR | VK_SHADER_STAGE_MISS_BIT_KHR | VK_SHADER_STAGE_INTERSECTION_BIT_KHR | VK_SHADER_STAGE_CALLABLE_BIT_KHR | VK_SHADER_STAGE_TASK_BIT_EXT | VK_SHADER_STAGE_MESH_BIT_EXT | VK_SHADER_STAGE_SUBPASS_SHADING_BIT_HUAWEI | VK_SHADER_STAGE_CLUSTER_CULLING_BIT_HUAWEI)
+    offset:                         uint32_t = 44
+    size:                           uint32_t = 4
+    pValues:                        const void* = 0x7ffffe2fab40
+
+Thread 0, Frame 9:
+vkCmdPushConstants(commandBuffer, layout, stageFlags, offset, size, pValues) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x555577421370
+    layout:                         VkPipelineLayout = 0x5555771374d0
+    stageFlags:                     VkShaderStageFlags = 2147483647 (VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_TESSELLATION_CONTROL_BIT | VK_SHADER_STAGE_TESSELLATION_EVALUATION_BIT | VK_SHADER_STAGE_GEOMETRY_BIT | VK_SHADER_STAGE_FRAGMENT_BIT | VK_SHADER_STAGE_COMPUTE_BIT | VK_SHADER_STAGE_ALL | VK_SHADER_STAGE_RAYGEN_BIT_KHR | VK_SHADER_STAGE_ANY_HIT_BIT_KHR | VK_SHADER_STAGE_CLOSEST_HIT_BIT_KHR | VK_SHADER_STAGE_MISS_BIT_KHR | VK_SHADER_STAGE_INTERSECTION_BIT_KHR | VK_SHADER_STAGE_CALLABLE_BIT_KHR | VK_SHADER_STAGE_TASK_BIT_EXT | VK_SHADER_STAGE_MESH_BIT_EXT | VK_SHADER_STAGE_SUBPASS_SHADING_BIT_HUAWEI | VK_SHADER_STAGE_CLUSTER_CULLING_BIT_HUAWEI)
+    offset:                         uint32_t = 48
+    size:                           uint32_t = 4
+    pValues:                        const void* = 0x7ffffe2fab40
+
+Thread 0, Frame 9:
+vkCmdPushConstants(commandBuffer, layout, stageFlags, offset, size, pValues) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x555577421370
+    layout:                         VkPipelineLayout = 0x5555771374d0
+    stageFlags:                     VkShaderStageFlags = 2147483647 (VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_TESSELLATION_CONTROL_BIT | VK_SHADER_STAGE_TESSELLATION_EVALUATION_BIT | VK_SHADER_STAGE_GEOMETRY_BIT | VK_SHADER_STAGE_FRAGMENT_BIT | VK_SHADER_STAGE_COMPUTE_BIT | VK_SHADER_STAGE_ALL | VK_SHADER_STAGE_RAYGEN_BIT_KHR | VK_SHADER_STAGE_ANY_HIT_BIT_KHR | VK_SHADER_STAGE_CLOSEST_HIT_BIT_KHR | VK_SHADER_STAGE_MISS_BIT_KHR | VK_SHADER_STAGE_INTERSECTION_BIT_KHR | VK_SHADER_STAGE_CALLABLE_BIT_KHR | VK_SHADER_STAGE_TASK_BIT_EXT | VK_SHADER_STAGE_MESH_BIT_EXT | VK_SHADER_STAGE_SUBPASS_SHADING_BIT_HUAWEI | VK_SHADER_STAGE_CLUSTER_CULLING_BIT_HUAWEI)
+    offset:                         uint32_t = 52
+    size:                           uint32_t = 4
+    pValues:                        const void* = 0x7ffffe2fab40
+
+Thread 0, Frame 9:
+vkCmdPushConstants(commandBuffer, layout, stageFlags, offset, size, pValues) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x555577421370
+    layout:                         VkPipelineLayout = 0x5555771374d0
+    stageFlags:                     VkShaderStageFlags = 2147483647 (VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_TESSELLATION_CONTROL_BIT | VK_SHADER_STAGE_TESSELLATION_EVALUATION_BIT | VK_SHADER_STAGE_GEOMETRY_BIT | VK_SHADER_STAGE_FRAGMENT_BIT | VK_SHADER_STAGE_COMPUTE_BIT | VK_SHADER_STAGE_ALL | VK_SHADER_STAGE_RAYGEN_BIT_KHR | VK_SHADER_STAGE_ANY_HIT_BIT_KHR | VK_SHADER_STAGE_CLOSEST_HIT_BIT_KHR | VK_SHADER_STAGE_MISS_BIT_KHR | VK_SHADER_STAGE_INTERSECTION_BIT_KHR | VK_SHADER_STAGE_CALLABLE_BIT_KHR | VK_SHADER_STAGE_TASK_BIT_EXT | VK_SHADER_STAGE_MESH_BIT_EXT | VK_SHADER_STAGE_SUBPASS_SHADING_BIT_HUAWEI | VK_SHADER_STAGE_CLUSTER_CULLING_BIT_HUAWEI)
+    offset:                         uint32_t = 56
+    size:                           uint32_t = 4
+    pValues:                        const void* = 0x7ffffe2fab40
+
+Thread 0, Frame 9:
+vkCmdPushConstants(commandBuffer, layout, stageFlags, offset, size, pValues) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x555577421370
+    layout:                         VkPipelineLayout = 0x5555771374d0
+    stageFlags:                     VkShaderStageFlags = 2147483647 (VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_TESSELLATION_CONTROL_BIT | VK_SHADER_STAGE_TESSELLATION_EVALUATION_BIT | VK_SHADER_STAGE_GEOMETRY_BIT | VK_SHADER_STAGE_FRAGMENT_BIT | VK_SHADER_STAGE_COMPUTE_BIT | VK_SHADER_STAGE_ALL | VK_SHADER_STAGE_RAYGEN_BIT_KHR | VK_SHADER_STAGE_ANY_HIT_BIT_KHR | VK_SHADER_STAGE_CLOSEST_HIT_BIT_KHR | VK_SHADER_STAGE_MISS_BIT_KHR | VK_SHADER_STAGE_INTERSECTION_BIT_KHR | VK_SHADER_STAGE_CALLABLE_BIT_KHR | VK_SHADER_STAGE_TASK_BIT_EXT | VK_SHADER_STAGE_MESH_BIT_EXT | VK_SHADER_STAGE_SUBPASS_SHADING_BIT_HUAWEI | VK_SHADER_STAGE_CLUSTER_CULLING_BIT_HUAWEI)
+    offset:                         uint32_t = 60
+    size:                           uint32_t = 4
+    pValues:                        const void* = 0x7ffffe2fab40
+
+Thread 0, Frame 9:
+vkCmdPushConstants(commandBuffer, layout, stageFlags, offset, size, pValues) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x555577421370
+    layout:                         VkPipelineLayout = 0x5555771374d0
+    stageFlags:                     VkShaderStageFlags = 2147483647 (VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_TESSELLATION_CONTROL_BIT | VK_SHADER_STAGE_TESSELLATION_EVALUATION_BIT | VK_SHADER_STAGE_GEOMETRY_BIT | VK_SHADER_STAGE_FRAGMENT_BIT | VK_SHADER_STAGE_COMPUTE_BIT | VK_SHADER_STAGE_ALL | VK_SHADER_STAGE_RAYGEN_BIT_KHR | VK_SHADER_STAGE_ANY_HIT_BIT_KHR | VK_SHADER_STAGE_CLOSEST_HIT_BIT_KHR | VK_SHADER_STAGE_MISS_BIT_KHR | VK_SHADER_STAGE_INTERSECTION_BIT_KHR | VK_SHADER_STAGE_CALLABLE_BIT_KHR | VK_SHADER_STAGE_TASK_BIT_EXT | VK_SHADER_STAGE_MESH_BIT_EXT | VK_SHADER_STAGE_SUBPASS_SHADING_BIT_HUAWEI | VK_SHADER_STAGE_CLUSTER_CULLING_BIT_HUAWEI)
+    offset:                         uint32_t = 64
+    size:                           uint32_t = 4
+    pValues:                        const void* = 0x7ffffe2fab40
+
+Thread 0, Frame 9:
+vkCmdPushConstants(commandBuffer, layout, stageFlags, offset, size, pValues) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x555577421370
+    layout:                         VkPipelineLayout = 0x5555771374d0
+    stageFlags:                     VkShaderStageFlags = 2147483647 (VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_TESSELLATION_CONTROL_BIT | VK_SHADER_STAGE_TESSELLATION_EVALUATION_BIT | VK_SHADER_STAGE_GEOMETRY_BIT | VK_SHADER_STAGE_FRAGMENT_BIT | VK_SHADER_STAGE_COMPUTE_BIT | VK_SHADER_STAGE_ALL | VK_SHADER_STAGE_RAYGEN_BIT_KHR | VK_SHADER_STAGE_ANY_HIT_BIT_KHR | VK_SHADER_STAGE_CLOSEST_HIT_BIT_KHR | VK_SHADER_STAGE_MISS_BIT_KHR | VK_SHADER_STAGE_INTERSECTION_BIT_KHR | VK_SHADER_STAGE_CALLABLE_BIT_KHR | VK_SHADER_STAGE_TASK_BIT_EXT | VK_SHADER_STAGE_MESH_BIT_EXT | VK_SHADER_STAGE_SUBPASS_SHADING_BIT_HUAWEI | VK_SHADER_STAGE_CLUSTER_CULLING_BIT_HUAWEI)
+    offset:                         uint32_t = 68
+    size:                           uint32_t = 4
+    pValues:                        const void* = 0x7ffffe2fab40
+
+Thread 0, Frame 9:
+vkCmdPushConstants(commandBuffer, layout, stageFlags, offset, size, pValues) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x555577421370
+    layout:                         VkPipelineLayout = 0x5555771374d0
+    stageFlags:                     VkShaderStageFlags = 2147483647 (VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_TESSELLATION_CONTROL_BIT | VK_SHADER_STAGE_TESSELLATION_EVALUATION_BIT | VK_SHADER_STAGE_GEOMETRY_BIT | VK_SHADER_STAGE_FRAGMENT_BIT | VK_SHADER_STAGE_COMPUTE_BIT | VK_SHADER_STAGE_ALL | VK_SHADER_STAGE_RAYGEN_BIT_KHR | VK_SHADER_STAGE_ANY_HIT_BIT_KHR | VK_SHADER_STAGE_CLOSEST_HIT_BIT_KHR | VK_SHADER_STAGE_MISS_BIT_KHR | VK_SHADER_STAGE_INTERSECTION_BIT_KHR | VK_SHADER_STAGE_CALLABLE_BIT_KHR | VK_SHADER_STAGE_TASK_BIT_EXT | VK_SHADER_STAGE_MESH_BIT_EXT | VK_SHADER_STAGE_SUBPASS_SHADING_BIT_HUAWEI | VK_SHADER_STAGE_CLUSTER_CULLING_BIT_HUAWEI)
+    offset:                         uint32_t = 72
+    size:                           uint32_t = 4
+    pValues:                        const void* = 0x7ffffe2fab40
+
+Thread 0, Frame 9:
+vkCmdPushConstants(commandBuffer, layout, stageFlags, offset, size, pValues) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x555577421370
+    layout:                         VkPipelineLayout = 0x5555771374d0
+    stageFlags:                     VkShaderStageFlags = 2147483647 (VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_TESSELLATION_CONTROL_BIT | VK_SHADER_STAGE_TESSELLATION_EVALUATION_BIT | VK_SHADER_STAGE_GEOMETRY_BIT | VK_SHADER_STAGE_FRAGMENT_BIT | VK_SHADER_STAGE_COMPUTE_BIT | VK_SHADER_STAGE_ALL | VK_SHADER_STAGE_RAYGEN_BIT_KHR | VK_SHADER_STAGE_ANY_HIT_BIT_KHR | VK_SHADER_STAGE_CLOSEST_HIT_BIT_KHR | VK_SHADER_STAGE_MISS_BIT_KHR | VK_SHADER_STAGE_INTERSECTION_BIT_KHR | VK_SHADER_STAGE_CALLABLE_BIT_KHR | VK_SHADER_STAGE_TASK_BIT_EXT | VK_SHADER_STAGE_MESH_BIT_EXT | VK_SHADER_STAGE_SUBPASS_SHADING_BIT_HUAWEI | VK_SHADER_STAGE_CLUSTER_CULLING_BIT_HUAWEI)
+    offset:                         uint32_t = 76
+    size:                           uint32_t = 4
+    pValues:                        const void* = 0x7ffffe2fab40
+
+Thread 0, Frame 9:
+vkCmdPushConstants(commandBuffer, layout, stageFlags, offset, size, pValues) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x555577421370
+    layout:                         VkPipelineLayout = 0x5555771374d0
+    stageFlags:                     VkShaderStageFlags = 2147483647 (VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_TESSELLATION_CONTROL_BIT | VK_SHADER_STAGE_TESSELLATION_EVALUATION_BIT | VK_SHADER_STAGE_GEOMETRY_BIT | VK_SHADER_STAGE_FRAGMENT_BIT | VK_SHADER_STAGE_COMPUTE_BIT | VK_SHADER_STAGE_ALL | VK_SHADER_STAGE_RAYGEN_BIT_KHR | VK_SHADER_STAGE_ANY_HIT_BIT_KHR | VK_SHADER_STAGE_CLOSEST_HIT_BIT_KHR | VK_SHADER_STAGE_MISS_BIT_KHR | VK_SHADER_STAGE_INTERSECTION_BIT_KHR | VK_SHADER_STAGE_CALLABLE_BIT_KHR | VK_SHADER_STAGE_TASK_BIT_EXT | VK_SHADER_STAGE_MESH_BIT_EXT | VK_SHADER_STAGE_SUBPASS_SHADING_BIT_HUAWEI | VK_SHADER_STAGE_CLUSTER_CULLING_BIT_HUAWEI)
+    offset:                         uint32_t = 80
+    size:                           uint32_t = 4
+    pValues:                        const void* = 0x7ffffe2fab40
+
+Thread 0, Frame 9:
+vkCmdPushConstants(commandBuffer, layout, stageFlags, offset, size, pValues) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x555577421370
+    layout:                         VkPipelineLayout = 0x5555771374d0
+    stageFlags:                     VkShaderStageFlags = 2147483647 (VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_TESSELLATION_CONTROL_BIT | VK_SHADER_STAGE_TESSELLATION_EVALUATION_BIT | VK_SHADER_STAGE_GEOMETRY_BIT | VK_SHADER_STAGE_FRAGMENT_BIT | VK_SHADER_STAGE_COMPUTE_BIT | VK_SHADER_STAGE_ALL | VK_SHADER_STAGE_RAYGEN_BIT_KHR | VK_SHADER_STAGE_ANY_HIT_BIT_KHR | VK_SHADER_STAGE_CLOSEST_HIT_BIT_KHR | VK_SHADER_STAGE_MISS_BIT_KHR | VK_SHADER_STAGE_INTERSECTION_BIT_KHR | VK_SHADER_STAGE_CALLABLE_BIT_KHR | VK_SHADER_STAGE_TASK_BIT_EXT | VK_SHADER_STAGE_MESH_BIT_EXT | VK_SHADER_STAGE_SUBPASS_SHADING_BIT_HUAWEI | VK_SHADER_STAGE_CLUSTER_CULLING_BIT_HUAWEI)
+    offset:                         uint32_t = 84
+    size:                           uint32_t = 4
+    pValues:                        const void* = 0x7ffffe2fab40
+
+Thread 0, Frame 9:
+vkCmdBindPipeline(commandBuffer, pipelineBindPoint, pipeline) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x555577421370
+    pipelineBindPoint:              VkPipelineBindPoint = VK_PIPELINE_BIND_POINT_GRAPHICS (0)
+    pipeline:                       VkPipeline = 0x5555773d2570
+
+Thread 0, Frame 9:
+vkCreateFramebuffer(device, pCreateInfo, pAllocator, pFramebuffer) returns VkResult VK_SUCCESS (0):
+    device:                         VkDevice = 0x555576c7c900
+    pCreateInfo:                    const VkFramebufferCreateInfo* = 0x7ffffe2fab30:
+        sType:                          VkStructureType = VK_STRUCTURE_TYPE_FRAMEBUFFER_CREATE_INFO (37)
+        pNext:                          const void* = NULL
+        flags:                          VkFramebufferCreateFlags = 0
+        renderPass:                     VkRenderPass = 0x555576874ea0
+        attachmentCount:                uint32_t = 1
+        pAttachments:                   const VkImageView* = 0x7ffffe2fab70
+            pAttachments[0]:                const VkImageView = 0x55557751bae0
+        width:                          uint32_t = 1024
+        height:                         uint32_t = 1024
+        layers:                         uint32_t = 1
+    pAllocator:                     const VkAllocationCallbacks* = NULL
+    pFramebuffer:                   VkFramebuffer* = 0x555576a6e0e0
+
+Thread 0, Frame 9:
+vkCmdBeginRenderPass(commandBuffer, pRenderPassBegin, contents) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x555577421370
+    pRenderPassBegin:               const VkRenderPassBeginInfo* = 0x7ffffe2fab70:
+        sType:                          VkStructureType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO (43)
+        pNext:                          const void* = NULL
+        renderPass:                     VkRenderPass = 0x555576874ea0
+        framebuffer:                    VkFramebuffer = 0x555576a6e0e0
+        renderArea:                     VkRect2D = 0:
+            offset:                         VkOffset2D = 0:
+                x:                              int32_t = 0
+                y:                              int32_t = 0
+            extent:                         VkExtent2D = 0:
+                width:                          uint32_t = 1024
+                height:                         uint32_t = 1024
+        clearValueCount:                uint32_t = 0
+        pClearValues:                   const VkClearValue* = NULL
+    contents:                       VkSubpassContents = VK_SUBPASS_CONTENTS_INLINE (0)
+
+Thread 0, Frame 9:
+vkCmdDraw(commandBuffer, vertexCount, instanceCount, firstVertex, firstInstance) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x555577421370
+    vertexCount:                    uint32_t = 6
+    instanceCount:                  uint32_t = 1
+    firstVertex:                    uint32_t = 0
+    firstInstance:                  uint32_t = 0
+
+Thread 0, Frame 9:
+vkCmdEndRenderPass(commandBuffer) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x555577421370
+
+Thread 0, Frame 9:
+vkEndCommandBuffer(commandBuffer) returns VkResult VK_SUCCESS (0):
+    commandBuffer:                  VkCommandBuffer = 0x555577421370
+
+Thread 0, Frame 9:
+vkAllocateCommandBuffers(device, pAllocateInfo, pCommandBuffers) returns VkResult VK_SUCCESS (0):
+    device:                         VkDevice = 0x555576c7c900
+    pAllocateInfo:                  const VkCommandBufferAllocateInfo* = 0x7ffffe0fe9c0:
+        sType:                          VkStructureType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO (40)
+        pNext:                          const void* = NULL
+        commandPool:                    VkCommandPool = 0x555577b73140
+        level:                          VkCommandBufferLevel = VK_COMMAND_BUFFER_LEVEL_PRIMARY (0)
+        commandBufferCount:             uint32_t = 1
+    pCommandBuffers:                VkCommandBuffer* = 0x7ffffe0fe9b8
+        pCommandBuffers[0]:             VkCommandBuffer = 0x555577e50ad0
+
+Thread 0, Frame 9:
+vkBeginCommandBuffer(commandBuffer, pBeginInfo) returns VkResult VK_SUCCESS (0):
+    commandBuffer:                  VkCommandBuffer = 0x555577e50ad0
+    pBeginInfo:                     const VkCommandBufferBeginInfo* = 0x7ffffe0fe1d0:
+        sType:                          VkStructureType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO (42)
+        pNext:                          const void* = NULL
+        flags:                          VkCommandBufferUsageFlags = 0
+        pInheritanceInfo:               const VkCommandBufferInheritanceInfo* = UNUSED
+
+Thread 0, Frame 9:
+vkEndCommandBuffer(commandBuffer) returns VkResult VK_SUCCESS (0):
+    commandBuffer:                  VkCommandBuffer = 0x555577e50ad0
+
+Thread 0, Frame 9:
+vkAllocateCommandBuffers(device, pAllocateInfo, pCommandBuffers) returns VkResult VK_SUCCESS (0):
+    device:                         VkDevice = 0x555576c7c900
+    pAllocateInfo:                  const VkCommandBufferAllocateInfo* = 0x7ffffe0fe9c0:
+        sType:                          VkStructureType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO (40)
+        pNext:                          const void* = NULL
+        commandPool:                    VkCommandPool = 0x555577b73140
+        level:                          VkCommandBufferLevel = VK_COMMAND_BUFFER_LEVEL_PRIMARY (0)
+        commandBufferCount:             uint32_t = 1
+    pCommandBuffers:                VkCommandBuffer* = 0x7ffffe0fe9b8
+        pCommandBuffers[0]:             VkCommandBuffer = 0x555577e0c950
+
+Thread 0, Frame 9:
+vkBeginCommandBuffer(commandBuffer, pBeginInfo) returns VkResult VK_SUCCESS (0):
+    commandBuffer:                  VkCommandBuffer = 0x555577e0c950
+    pBeginInfo:                     const VkCommandBufferBeginInfo* = 0x7ffffe0fe1d0:
+        sType:                          VkStructureType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO (42)
+        pNext:                          const void* = NULL
+        flags:                          VkCommandBufferUsageFlags = 0
+        pInheritanceInfo:               const VkCommandBufferInheritanceInfo* = UNUSED
+
+Thread 0, Frame 9:
+vkCmdPipelineBarrier(commandBuffer, srcStageMask, dstStageMask, dependencyFlags, memoryBarrierCount, pMemoryBarriers, bufferMemoryBarrierCount, pBufferMemoryBarriers, imageMemoryBarrierCount, pImageMemoryBarriers) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x555577e0c950
+    srcStageMask:                   VkPipelineStageFlags = 4096 (VK_PIPELINE_STAGE_TRANSFER_BIT)
+    dstStageMask:                   VkPipelineStageFlags = 1024 (VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT)
+    dependencyFlags:                VkDependencyFlags = 0
+    memoryBarrierCount:             uint32_t = 0
+    pMemoryBarriers:                const VkMemoryBarrier* = NULL
+    bufferMemoryBarrierCount:       uint32_t = 0
+    pBufferMemoryBarriers:          const VkBufferMemoryBarrier* = NULL
+    imageMemoryBarrierCount:        uint32_t = 1
+    pImageMemoryBarriers:           const VkImageMemoryBarrier* = 0x7ffffe2fcc50
+        pImageMemoryBarriers[0]:        const VkImageMemoryBarrier = 0x7ffffe2fcc50:
+            sType:                          VkStructureType = VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER (45)
+            pNext:                          const void* = NULL
+            srcAccessMask:                  VkAccessFlags = 2048 (VK_ACCESS_TRANSFER_READ_BIT)
+            dstAccessMask:                  VkAccessFlags = 384 (VK_ACCESS_COLOR_ATTACHMENT_READ_BIT | VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT)
+            oldLayout:                      VkImageLayout = VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL (6)
+            newLayout:                      VkImageLayout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL (2)
+            srcQueueFamilyIndex:            uint32_t = 4294967295
+            dstQueueFamilyIndex:            uint32_t = 4294967295
+            image:                          VkImage = 0x555577139f50
+            subresourceRange:               VkImageSubresourceRange = 0:
+                aspectMask:                     VkImageAspectFlags = 1 (VK_IMAGE_ASPECT_COLOR_BIT)
+                baseMipLevel:                   uint32_t = 0
+                levelCount:                     uint32_t = 4294967295
+                baseArrayLayer:                 uint32_t = 0
+                layerCount:                     uint32_t = 4294967295
+
+Thread 0, Frame 9:
+vkEndCommandBuffer(commandBuffer) returns VkResult VK_SUCCESS (0):
+    commandBuffer:                  VkCommandBuffer = 0x555577e0c950
+
+Thread 0, Frame 9:
+vkAllocateCommandBuffers(device, pAllocateInfo, pCommandBuffers) returns VkResult VK_SUCCESS (0):
+    device:                         VkDevice = 0x555576c7c900
+    pAllocateInfo:                  const VkCommandBufferAllocateInfo* = 0x7ffffe0fe9c0:
+        sType:                          VkStructureType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO (40)
+        pNext:                          const void* = NULL
+        commandPool:                    VkCommandPool = 0x555577b73140
+        level:                          VkCommandBufferLevel = VK_COMMAND_BUFFER_LEVEL_PRIMARY (0)
+        commandBufferCount:             uint32_t = 1
+    pCommandBuffers:                VkCommandBuffer* = 0x7ffffe0fe9b8
+        pCommandBuffers[0]:             VkCommandBuffer = 0x555577e33600
+
+Thread 0, Frame 9:
+vkBeginCommandBuffer(commandBuffer, pBeginInfo) returns VkResult VK_SUCCESS (0):
+    commandBuffer:                  VkCommandBuffer = 0x555577e33600
+    pBeginInfo:                     const VkCommandBufferBeginInfo* = 0x7ffffe0fe1d0:
+        sType:                          VkStructureType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO (42)
+        pNext:                          const void* = NULL
+        flags:                          VkCommandBufferUsageFlags = 0
+        pInheritanceInfo:               const VkCommandBufferInheritanceInfo* = UNUSED
+
+Thread 0, Frame 9:
+vkCmdPipelineBarrier(commandBuffer, srcStageMask, dstStageMask, dependencyFlags, memoryBarrierCount, pMemoryBarriers, bufferMemoryBarrierCount, pBufferMemoryBarriers, imageMemoryBarrierCount, pImageMemoryBarriers) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x555577e33600
+    srcStageMask:                   VkPipelineStageFlags = 1024 (VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT)
+    dstStageMask:                   VkPipelineStageFlags = 4096 (VK_PIPELINE_STAGE_TRANSFER_BIT)
+    dependencyFlags:                VkDependencyFlags = 0
+    memoryBarrierCount:             uint32_t = 0
+    pMemoryBarriers:                const VkMemoryBarrier* = NULL
+    bufferMemoryBarrierCount:       uint32_t = 0
+    pBufferMemoryBarriers:          const VkBufferMemoryBarrier* = NULL
+    imageMemoryBarrierCount:        uint32_t = 1
+    pImageMemoryBarriers:           const VkImageMemoryBarrier* = 0x7ffffe2fcd50
+        pImageMemoryBarriers[0]:        const VkImageMemoryBarrier = 0x7ffffe2fcd50:
+            sType:                          VkStructureType = VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER (45)
+            pNext:                          const void* = NULL
+            srcAccessMask:                  VkAccessFlags = 384 (VK_ACCESS_COLOR_ATTACHMENT_READ_BIT | VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT)
+            dstAccessMask:                  VkAccessFlags = 2048 (VK_ACCESS_TRANSFER_READ_BIT)
+            oldLayout:                      VkImageLayout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL (2)
+            newLayout:                      VkImageLayout = VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL (6)
+            srcQueueFamilyIndex:            uint32_t = 4294967295
+            dstQueueFamilyIndex:            uint32_t = 4294967295
+            image:                          VkImage = 0x555577139f50
+            subresourceRange:               VkImageSubresourceRange = 0:
+                aspectMask:                     VkImageAspectFlags = 1 (VK_IMAGE_ASPECT_COLOR_BIT)
+                baseMipLevel:                   uint32_t = 0
+                levelCount:                     uint32_t = 4294967295
+                baseArrayLayer:                 uint32_t = 0
+                layerCount:                     uint32_t = 4294967295
+
+Thread 0, Frame 9:
+vkEndCommandBuffer(commandBuffer) returns VkResult VK_SUCCESS (0):
+    commandBuffer:                  VkCommandBuffer = 0x555577e33600
+
+Thread 0, Frame 9:
+vkQueueSubmit(queue, submitCount, pSubmits, fence) returns VkResult VK_SUCCESS (0):
+    queue:                          VkQueue = 0x555576a176a0
+    submitCount:                    uint32_t = 1
+    pSubmits:                       const VkSubmitInfo* = 0x7ffffe0fe1e0
+        pSubmits[0]:                    const VkSubmitInfo = 0x7ffffe0fe1e0:
+            sType:                          VkStructureType = VK_STRUCTURE_TYPE_SUBMIT_INFO (4)
+            pNext:                          const void* = NULL
+            waitSemaphoreCount:             uint32_t = 0
+            pWaitSemaphores:                const VkSemaphore* = NULL
+            pWaitDstStageMask:              const VkPipelineStageFlags* = NULL
+            commandBufferCount:             uint32_t = 4
+            pCommandBuffers:                const VkCommandBuffer* = 0x7ffffe0fe228
+                pCommandBuffers[0]:             const VkCommandBuffer = 0x555577e0c950
+                pCommandBuffers[1]:             const VkCommandBuffer = 0x555577e50ad0
+                pCommandBuffers[2]:             const VkCommandBuffer = 0x555577421370
+                pCommandBuffers[3]:             const VkCommandBuffer = 0x555577e33600
+            signalSemaphoreCount:           uint32_t = 0
+            pSignalSemaphores:              const VkSemaphore* = NULL
+    fence:                          VkFence = 0
+
+Thread 0, Frame 9:
+vkQueueSubmit(queue, submitCount, pSubmits, fence) returns VkResult VK_SUCCESS (0):
+    queue:                          VkQueue = 0x555576a176a0
+    submitCount:                    uint32_t = 1
+    pSubmits:                       const VkSubmitInfo* = 0x7ffffe0fe1e0
+        pSubmits[0]:                    const VkSubmitInfo = 0x7ffffe0fe1e0:
+            sType:                          VkStructureType = VK_STRUCTURE_TYPE_SUBMIT_INFO (4)
+            pNext:                          const void* = VkTimelineSemaphoreSubmitInfo
+            waitSemaphoreCount:             uint32_t = 0
+            pWaitSemaphores:                const VkSemaphore* = NULL
+            pWaitDstStageMask:              const VkPipelineStageFlags* = NULL
+            commandBufferCount:             uint32_t = 0
+            pCommandBuffers:                const VkCommandBuffer* = NULL
+            signalSemaphoreCount:           uint32_t = 1
+            pSignalSemaphores:              const VkSemaphore* = 0x7ffffe0fe228
+                pSignalSemaphores[0]:           const VkSemaphore = 0x5555766e5610
+        pNext:                          VkTimelineSemaphoreSubmitInfo = 0x7ffffe0fd960:
+            sType:                          VkStructureType = VK_STRUCTURE_TYPE_TIMELINE_SEMAPHORE_SUBMIT_INFO (1000207003)
+            pNext:                          const void* = NULL
+            waitSemaphoreValueCount:        uint32_t = 0
+            pWaitSemaphoreValues:           const uint64_t* = NULL
+            signalSemaphoreValueCount:      uint32_t = 1
+            pSignalSemaphoreValues:         const uint64_t* = 0x7ffffe2fcb88
+                pSignalSemaphoreValues[0]:      const uint64_t = 10
+    fence:                          VkFence = 0
+
+Thread 0, Frame 9:
+vkDestroyFramebuffer(device, framebuffer, pAllocator) returns void:
+    device:                         VkDevice = 0x555576c7c900
+    framebuffer:                    VkFramebuffer = 0x5555776a6ef0
+    pAllocator:                     const VkAllocationCallbacks* = NULL
+
+Thread 0, Frame 9:
+vkFreeCommandBuffers(device, commandPool, commandBufferCount, pCommandBuffers) returns void:
+    device:                         VkDevice = 0x555576c7c900
+    commandPool:                    VkCommandPool = 0x5555773ba2e0
+    commandBufferCount:             uint32_t = 1
+    pCommandBuffers:                const VkCommandBuffer* = 0x555576a968d0
+        pCommandBuffers[0]:             const VkCommandBuffer = 0x5555773ba6a0
+
+Thread 0, Frame 9:
+vkFreeCommandBuffers(device, commandPool, commandBufferCount, pCommandBuffers) returns void:
+    device:                         VkDevice = 0x555576c7c900
+    commandPool:                    VkCommandPool = 0x5555773ba2e0
+    commandBufferCount:             uint32_t = 1
+    pCommandBuffers:                const VkCommandBuffer* = 0x5555785be520
+        pCommandBuffers[0]:             const VkCommandBuffer = 0x555577766bb0
+
+Thread 0, Frame 9:
+vkFreeCommandBuffers(device, commandPool, commandBufferCount, pCommandBuffers) returns void:
+    device:                         VkDevice = 0x555576c7c900
+    commandPool:                    VkCommandPool = 0x5555773ba2e0
+    commandBufferCount:             uint32_t = 1
+    pCommandBuffers:                const VkCommandBuffer* = 0x555577f53b50
+        pCommandBuffers[0]:             const VkCommandBuffer = 0x5555777d1ae0
+
+Thread 0, Frame 9:
+vkFreeCommandBuffers(device, commandPool, commandBufferCount, pCommandBuffers) returns void:
+    device:                         VkDevice = 0x555576c7c900
+    commandPool:                    VkCommandPool = 0x5555773ba2e0
+    commandBufferCount:             uint32_t = 1
+    pCommandBuffers:                const VkCommandBuffer* = 0x555576a5e380
+        pCommandBuffers[0]:             const VkCommandBuffer = 0x555577e0ae50
+
+Thread 0, Frame 9:
+vkResetCommandPool(device, commandPool, flags) returns VkResult VK_SUCCESS (0):
+    device:                         VkDevice = 0x555576c7c900
+    commandPool:                    VkCommandPool = 0x5555773ba2e0
+    flags:                          VkCommandPoolResetFlags = 0
+
+Thread 0, Frame 9:
+vkQueueSubmit(queue, submitCount, pSubmits, fence) returns VkResult VK_SUCCESS (0):
+    queue:                          VkQueue = 0x555576a176a0
+    submitCount:                    uint32_t = 1
+    pSubmits:                       const VkSubmitInfo* = 0x7ffffe0fed60
+        pSubmits[0]:                    const VkSubmitInfo = 0x7ffffe0fed60:
+            sType:                          VkStructureType = VK_STRUCTURE_TYPE_SUBMIT_INFO (4)
+            pNext:                          const void* = VkTimelineSemaphoreSubmitInfo
+            waitSemaphoreCount:             uint32_t = 0
+            pWaitSemaphores:                const VkSemaphore* = NULL
+            pWaitDstStageMask:              const VkPipelineStageFlags* = NULL
+            commandBufferCount:             uint32_t = 0
+            pCommandBuffers:                const VkCommandBuffer* = NULL
+            signalSemaphoreCount:           uint32_t = 1
+            pSignalSemaphores:              const VkSemaphore* = 0x7ffffe0feda8
+                pSignalSemaphores[0]:           const VkSemaphore = 0x5555766b8d30
+        pNext:                          VkTimelineSemaphoreSubmitInfo = 0x7ffffe0fe4e0:
+            sType:                          VkStructureType = VK_STRUCTURE_TYPE_TIMELINE_SEMAPHORE_SUBMIT_INFO (1000207003)
+            pNext:                          const void* = NULL
+            waitSemaphoreValueCount:        uint32_t = 0
+            pWaitSemaphoreValues:           const uint64_t* = NULL
+            signalSemaphoreValueCount:      uint32_t = 1
+            pSignalSemaphoreValues:         const uint64_t* = 0x7ffffe2ff4d8
+                pSignalSemaphoreValues[0]:      const uint64_t = 5
+    fence:                          VkFence = 0
+
+Thread 1, Frame 9:
+vkWaitSemaphoresKHR(device, pWaitInfo, timeout) returns VkResult VK_SUCCESS (0):
+    device:                         VkDevice = 0x555576c7c900
+    pWaitInfo:                      const VkSemaphoreWaitInfo* = 0x7fffffdadb50:
+        sType:                          VkStructureType = VK_STRUCTURE_TYPE_SEMAPHORE_WAIT_INFO (1000207004)
+        pNext:                          const void* = NULL
+        flags:                          VkSemaphoreWaitFlags = 0
+        semaphoreCount:                 uint32_t = 1
+        pSemaphores:                    const VkSemaphore* = 0x7fffffdadb80
+            pSemaphores[0]:                 const VkSemaphore = 0x5555766e5610
+        pValues:                        const uint64_t* = 0x7ffa969d3cc8
+            pValues[0]:                     const uint64_t = 8
+    timeout:                        uint64_t = 18446744073709551615
+
+Thread 1, Frame 9:
+vkWaitSemaphoresKHR(device, pWaitInfo, timeout) returns VkResult VK_SUCCESS (0):
+    device:                         VkDevice = 0x555576c7c900
+    pWaitInfo:                      const VkSemaphoreWaitInfo* = 0x7fffffdadb50:
+        sType:                          VkStructureType = VK_STRUCTURE_TYPE_SEMAPHORE_WAIT_INFO (1000207004)
+        pNext:                          const void* = NULL
+        flags:                          VkSemaphoreWaitFlags = 0
+        semaphoreCount:                 uint32_t = 1
+        pSemaphores:                    const VkSemaphore* = 0x7fffffdadb80
+            pSemaphores[0]:                 const VkSemaphore = 0x5555766e5610
+        pValues:                        const uint64_t* = 0x7ffa969d3ce8
+            pValues[0]:                     const uint64_t = 9
+    timeout:                        uint64_t = 18446744073709551615
+
+Thread 3, Frame 9:
+vkAcquireNextImageKHR(device, swapchain, timeout, semaphore, fence, pImageIndex) returns VkResult VK_SUCCESS (0):
+    device:                         VkDevice = 0x555576c7c900
+    swapchain:                      VkSwapchainKHR = 0x7ffa8c000f80
+    timeout:                        uint64_t = 18446744073709551615
+    semaphore:                      VkSemaphore = 0
+    fence:                          VkFence = 0x5555773b8d90
+    pImageIndex:                    uint32_t* = 2
+
+Thread 3, Frame 9:
+vkWaitForFences(device, fenceCount, pFences, waitAll, timeout) returns VkResult VK_SUCCESS (0):
+    device:                         VkDevice = 0x555576c7c900
+    fenceCount:                     uint32_t = 1
+    pFences:                        const VkFence* = 0x1000fdb80
+        pFences[0]:                     const VkFence = 0x5555773b8d90
+    waitAll:                        VkBool32 = 1
+    timeout:                        uint64_t = 18446744073709551615
+
+Thread 3, Frame 9:
+vkResetFences(device, fenceCount, pFences) returns VkResult VK_SUCCESS (0):
+    device:                         VkDevice = 0x555576c7c900
+    fenceCount:                     uint32_t = 1
+    pFences:                        const VkFence* = 0x1000fdb80
+        pFences[0]:                     const VkFence = 0x5555773b8d90
+
+Thread 3, Frame 9:
+vkResetCommandBuffer(commandBuffer, flags) returns VkResult VK_SUCCESS (0):
+    commandBuffer:                  VkCommandBuffer = 0x7ffa8c018500
+    flags:                          VkCommandBufferResetFlags = 0
+
+Thread 3, Frame 9:
+vkBeginCommandBuffer(commandBuffer, pBeginInfo) returns VkResult VK_SUCCESS (0):
+    commandBuffer:                  VkCommandBuffer = 0x7ffa8c018500
+    pBeginInfo:                     const VkCommandBufferBeginInfo* = 0x1000fdb50:
+        sType:                          VkStructureType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO (42)
+        pNext:                          const void* = NULL
+        flags:                          VkCommandBufferUsageFlags = 0
+        pInheritanceInfo:               const VkCommandBufferInheritanceInfo* = UNUSED
+
+Thread 3, Frame 9:
+vkCmdPipelineBarrier(commandBuffer, srcStageMask, dstStageMask, dependencyFlags, memoryBarrierCount, pMemoryBarriers, bufferMemoryBarrierCount, pBufferMemoryBarriers, imageMemoryBarrierCount, pImageMemoryBarriers) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x7ffa8c018500
+    srcStageMask:                   VkPipelineStageFlags = 1 (VK_PIPELINE_STAGE_TOP_OF_PIPE_BIT)
+    dstStageMask:                   VkPipelineStageFlags = 4096 (VK_PIPELINE_STAGE_TRANSFER_BIT)
+    dependencyFlags:                VkDependencyFlags = 0
+    memoryBarrierCount:             uint32_t = 0
+    pMemoryBarriers:                const VkMemoryBarrier* = NULL
+    bufferMemoryBarrierCount:       uint32_t = 0
+    pBufferMemoryBarriers:          const VkBufferMemoryBarrier* = NULL
+    imageMemoryBarrierCount:        uint32_t = 1
+    pImageMemoryBarriers:           const VkImageMemoryBarrier* = 0x7ffaa4adfd40
+        pImageMemoryBarriers[0]:        const VkImageMemoryBarrier = 0x7ffaa4adfd40:
+            sType:                          VkStructureType = VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER (45)
+            pNext:                          const void* = NULL
+            srcAccessMask:                  VkAccessFlags = 0 (VK_ACCESS_NONE)
+            dstAccessMask:                  VkAccessFlags = 4096 (VK_ACCESS_TRANSFER_WRITE_BIT)
+            oldLayout:                      VkImageLayout = VK_IMAGE_LAYOUT_UNDEFINED (0)
+            newLayout:                      VkImageLayout = VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL (7)
+            srcQueueFamilyIndex:            uint32_t = 4294967295
+            dstQueueFamilyIndex:            uint32_t = 4294967295
+            image:                          VkImage = 0x7ffa8c00fd00
+            subresourceRange:               VkImageSubresourceRange = 0:
+                aspectMask:                     VkImageAspectFlags = 1 (VK_IMAGE_ASPECT_COLOR_BIT)
+                baseMipLevel:                   uint32_t = 0
+                levelCount:                     uint32_t = 4294967295
+                baseArrayLayer:                 uint32_t = 0
+                layerCount:                     uint32_t = 4294967295
+
+Thread 3, Frame 9:
+vkCmdBlitImage(commandBuffer, srcImage, srcImageLayout, dstImage, dstImageLayout, regionCount, pRegions, filter) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x7ffa8c018500
+    srcImage:                       VkImage = 0x555577139f50
+    srcImageLayout:                 VkImageLayout = VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL (6)
+    dstImage:                       VkImage = 0x7ffa8c00fd00
+    dstImageLayout:                 VkImageLayout = VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL (7)
+    regionCount:                    uint32_t = 1
+    pRegions:                       const VkImageBlit* = 0x7ffaa4adfe40
+        pRegions[0]:                    const VkImageBlit = 0x7ffaa4adfe40:
+            srcSubresource:                 VkImageSubresourceLayers = 0:
+                aspectMask:                     VkImageAspectFlags = 1 (VK_IMAGE_ASPECT_COLOR_BIT)
+                mipLevel:                       uint32_t = 0
+                baseArrayLayer:                 uint32_t = 0
+                layerCount:                     uint32_t = 1
+            srcOffsets:                     VkOffset3D[2] = 0x7ffaa4adfe50
+                srcOffsets[0]:                  VkOffset3D = 0:
+                    x:                              int32_t = 0
+                    y:                              int32_t = 0
+                    z:                              int32_t = 0
+                srcOffsets[1]:                  VkOffset3D = 0:
+                    x:                              int32_t = 1024
+                    y:                              int32_t = 1024
+                    z:                              int32_t = 1
+            dstSubresource:                 VkImageSubresourceLayers = 0:
+                aspectMask:                     VkImageAspectFlags = 1 (VK_IMAGE_ASPECT_COLOR_BIT)
+                mipLevel:                       uint32_t = 0
+                baseArrayLayer:                 uint32_t = 0
+                layerCount:                     uint32_t = 1
+            dstOffsets:                     VkOffset3D[2] = 0x7ffaa4adfe78
+                dstOffsets[0]:                  VkOffset3D = 0:
+                    x:                              int32_t = 0
+                    y:                              int32_t = 0
+                    z:                              int32_t = 0
+                dstOffsets[1]:                  VkOffset3D = 0:
+                    x:                              int32_t = 512
+                    y:                              int32_t = 512
+                    z:                              int32_t = 1
+    filter:                         VkFilter = VK_FILTER_LINEAR (1)
+
+Thread 3, Frame 9:
+vkCmdPipelineBarrier(commandBuffer, srcStageMask, dstStageMask, dependencyFlags, memoryBarrierCount, pMemoryBarriers, bufferMemoryBarrierCount, pBufferMemoryBarriers, imageMemoryBarrierCount, pImageMemoryBarriers) returns void:
+    commandBuffer:                  VkCommandBuffer = 0x7ffa8c018500
+    srcStageMask:                   VkPipelineStageFlags = 4096 (VK_PIPELINE_STAGE_TRANSFER_BIT)
+    dstStageMask:                   VkPipelineStageFlags = 8192 (VK_PIPELINE_STAGE_BOTTOM_OF_PIPE_BIT)
+    dependencyFlags:                VkDependencyFlags = 0
+    memoryBarrierCount:             uint32_t = 0
+    pMemoryBarriers:                const VkMemoryBarrier* = NULL
+    bufferMemoryBarrierCount:       uint32_t = 0
+    pBufferMemoryBarriers:          const VkBufferMemoryBarrier* = NULL
+    imageMemoryBarrierCount:        uint32_t = 1
+    pImageMemoryBarriers:           const VkImageMemoryBarrier* = 0x7ffaa4adfd40
+        pImageMemoryBarriers[0]:        const VkImageMemoryBarrier = 0x7ffaa4adfd40:
+            sType:                          VkStructureType = VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER (45)
+            pNext:                          const void* = NULL
+            srcAccessMask:                  VkAccessFlags = 4096 (VK_ACCESS_TRANSFER_WRITE_BIT)
+            dstAccessMask:                  VkAccessFlags = 0 (VK_ACCESS_NONE)
+            oldLayout:                      VkImageLayout = VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL (7)
+            newLayout:                      VkImageLayout = VK_IMAGE_LAYOUT_PRESENT_SRC_KHR (1000001002)
+            srcQueueFamilyIndex:            uint32_t = 4294967295
+            dstQueueFamilyIndex:            uint32_t = 4294967295
+            image:                          VkImage = 0x7ffa8c00fd00
+            subresourceRange:               VkImageSubresourceRange = 0:
+                aspectMask:                     VkImageAspectFlags = 1 (VK_IMAGE_ASPECT_COLOR_BIT)
+                baseMipLevel:                   uint32_t = 0
+                levelCount:                     uint32_t = 4294967295
+                baseArrayLayer:                 uint32_t = 0
+                layerCount:                     uint32_t = 4294967295
+
+Thread 3, Frame 9:
+vkEndCommandBuffer(commandBuffer) returns VkResult VK_SUCCESS (0):
+    commandBuffer:                  VkCommandBuffer = 0x7ffa8c018500
+
+Thread 3, Frame 9:
+vkQueueSubmit(queue, submitCount, pSubmits, fence) returns VkResult VK_SUCCESS (0):
+    queue:                          VkQueue = 0x555576a176a0
+    submitCount:                    uint32_t = 1
+    pSubmits:                       const VkSubmitInfo* = 0x1000fdb60
+        pSubmits[0]:                    const VkSubmitInfo = 0x1000fdb60:
+            sType:                          VkStructureType = VK_STRUCTURE_TYPE_SUBMIT_INFO (4)
+            pNext:                          const void* = NULL
+            waitSemaphoreCount:             uint32_t = 0
+            pWaitSemaphores:                const VkSemaphore* = NULL
+            pWaitDstStageMask:              const VkPipelineStageFlags* = NULL
+            commandBufferCount:             uint32_t = 1
+            pCommandBuffers:                const VkCommandBuffer* = 0x1000fdba8
+                pCommandBuffers[0]:             const VkCommandBuffer = 0x7ffa8c018500
+            signalSemaphoreCount:           uint32_t = 1
+            pSignalSemaphores:              const VkSemaphore* = 0x1000fdbb0
+                pSignalSemaphores[0]:           const VkSemaphore = 0x5555773b83d0
+    fence:                          VkFence = 0
+
+Thread 3, Frame 9:
+vkQueuePresentKHR(queue, pPresentInfo) returns VkResult VK_SUCCESS (0):
+    queue:                          VkQueue = 0x555576a176a0
+    pPresentInfo:                   const VkPresentInfoKHR* = 0x1000fdb20:
+        sType:                          VkStructureType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR (1000001001)
+        pNext:                          const void* = NULL
+        waitSemaphoreCount:             uint32_t = 1
+        pWaitSemaphores:                const VkSemaphore* = 0x1000fdb60
+            pWaitSemaphores[0]:             const VkSemaphore = 0x5555773b83d0
+        swapchainCount:                 uint32_t = 1
+        pSwapchains:                    const VkSwapchainKHR* = 0x1000fda40
+            pSwapchains[0]:                 const VkSwapchainKHR = 0x7ffa8c000f80
+        pImageIndices:                  const uint32_t* = 0x7ffffea82a18
+            pImageIndices[0]:               const uint32_t = 2
+        pResults:                       VkResult* = NULL
+
