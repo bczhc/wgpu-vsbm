@@ -15,7 +15,7 @@ struct Uniforms {
     _p5: f32,
 }
 
-@group(0) @binding(0) var<uniform> ui: Uniforms;
+var<immediate> ui: Uniforms;
 
 fn pixel_to_ndc(pos: vec2f) -> vec2f {
     let ndc = (pos / CANVAS_SIZE * 2.0 - 1.0);

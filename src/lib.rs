@@ -1,8 +1,9 @@
-use bytemuck::{Pod, Zeroable};
+use bytemuck::{bytes_of, Pod, Zeroable};
 use std::time::{Duration, Instant};
 use wgpu::{
     include_wgsl, Instance, LoadOpDontCare, PipelineCompilationOptions, Surface, TextureFormat,
 };
+use wgpu::util::RenderEncoder;
 
 macro_rules! default {
     () => {
@@ -12,7 +13,7 @@ macro_rules! default {
 
 #[repr(C)]
 #[derive(Copy, Clone, Debug, Pod, Zeroable)]
-pub struct Uniforms {
+pub struct Immediates {
     origin: [f32; 3],
     padding1: f32,
     right: [f32; 3],
@@ -33,10 +34,9 @@ pub struct State {
     queue: wgpu::Queue,
     pub size: (u32, u32),
     render_pipeline: wgpu::RenderPipeline,
-    uniform_buffer: wgpu::Buffer,
-    uniform_bind_group: wgpu::BindGroup,
     elapsed: f32,
     texture_format: wgpu::TextureFormat,
+    immediates: Immediates,
 }
 
 pub struct Config {
@@ -70,7 +70,17 @@ impl State {
         let adapter = instance.request_adapter(&default!()).await.unwrap();
 
         let (device, queue) = adapter
-            .request_device(&wgpu::DeviceDescriptor::default())
+            .request_device(&wgpu::DeviceDescriptor {
+                label: None,
+                required_features: wgpu::Features::IMMEDIATES,
+                required_limits: wgpu::Limits {
+                    max_immediate_size: 80,
+                    ..default!()
+                },
+                experimental_features: Default::default(),
+                memory_hints: Default::default(),
+                trace: Default::default(),
+            })
             .await
             .unwrap();
 
@@ -90,42 +100,26 @@ impl State {
         let shader_vs = &shader;
         let shader_fs = &shader;
 
-        let uniform_buffer = device.create_buffer(&wgpu::BufferDescriptor {
-            label: Some("Uniform Buffer"),
-            size: std::mem::size_of::<Uniforms>() as u64,
-            usage: wgpu::BufferUsages::UNIFORM | wgpu::BufferUsages::COPY_DST,
-            mapped_at_creation: false,
-        });
-
-        let uniform_bind_group_layout =
-            device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
-                entries: &[wgpu::BindGroupLayoutEntry {
-                    binding: 0,
-                    visibility: wgpu::ShaderStages::FRAGMENT,
-                    ty: wgpu::BindingType::Buffer {
-                        ty: wgpu::BufferBindingType::Uniform,
-                        has_dynamic_offset: false,
-                        min_binding_size: None,
-                    },
-                    count: None,
-                }],
-                label: Some("uniform_bind_group_layout"),
-            });
-
-        let uniform_bind_group = device.create_bind_group(&wgpu::BindGroupDescriptor {
-            layout: &uniform_bind_group_layout,
-            entries: &[wgpu::BindGroupEntry {
-                binding: 0,
-                resource: uniform_buffer.as_entire_binding(),
-            }],
-            label: Some("uniform_bind_group"),
-        });
+        // let uniform_bind_group_layout =
+        //     device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
+        //         entries: &[wgpu::BindGroupLayoutEntry {
+        //             binding: 0,
+        //             visibility: wgpu::ShaderStages::FRAGMENT,
+        //             ty: wgpu::BindingType::Buffer {
+        //                 ty: wgpu::BufferBindingType::Uniform,
+        //                 has_dynamic_offset: false,
+        //                 min_binding_size: None,
+        //             },
+        //             count: None,
+        //         }],
+        //         label: Some("uniform_bind_group_layout"),
+        //     });
 
         let render_pipeline_layout =
             device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
                 label: Some("Render Pipeline Layout"),
-                bind_group_layouts: &[&uniform_bind_group_layout],
-                immediate_size: 0,
+                bind_group_layouts: &[],
+                immediate_size: 80,
             });
 
         let render_pipeline = device.create_render_pipeline(&wgpu::RenderPipelineDescriptor {
@@ -165,10 +159,9 @@ impl State {
             queue,
             size,
             render_pipeline,
-            uniform_buffer,
-            uniform_bind_group,
             elapsed: 0f32,
             texture_format,
+            immediates: Zeroable::zeroed(),
         };
         state.configure_surface();
         state
@@ -204,7 +197,7 @@ impl State {
             -ang1.sin() * ang2.cos(),
         ];
 
-        let uniforms = Uniforms {
+        self.immediates = Immediates {
             origin,
             padding1: 0.0,
             right,
@@ -219,8 +212,6 @@ impl State {
         };
 
         // if !self.once {
-        self.queue
-            .write_buffer(&self.uniform_buffer, 0, bytemuck::bytes_of(&uniforms));
         // self.once = true;
         // }
     }
@@ -265,7 +256,7 @@ impl State {
             });
 
             pass.set_pipeline(&self.render_pipeline);
-            pass.set_bind_group(0, &self.uniform_bind_group, &[]);
+            pass.set_immediates(0, bytes_of(&self.immediates));
             pass.draw(0..6, 0..1);
         }
         let command_buffer = encoder.finish();
