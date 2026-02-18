@@ -32,19 +32,13 @@ struct Args {
 
 impl ApplicationHandler for App {
     fn resumed(&mut self, event_loop: &ActiveEventLoop) {
-        let width = if env::var("WAYLAND_DISPLAY").is_ok() {
-            let my_wl_scale_factor: f64 = 1.333333;
-            (1024.0 / my_wl_scale_factor) as u32
-        } else {
-            1024
-        };
         // Create window object
         let window = Arc::new(
             event_loop
                 .create_window(
                     Window::default_attributes()
                         .with_resizable(false)
-                        .with_inner_size(PhysicalSize::new(width, width)),
+                        .with_inner_size(PhysicalSize::new(1024, 1024)),
                 )
                 .unwrap(),
         );
