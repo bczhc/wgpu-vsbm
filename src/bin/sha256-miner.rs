@@ -250,27 +250,15 @@ fn wgsl_source(difficulty_bits: u32) -> String {
     source.join("\n")
 }
 
-fn print_result_and_exit(buf: FatSha256Buf, start: Instant) {
-    use sha2::Digest;
-    let mut hasher = sha2::Sha256::new();
-    hasher.update(convert_fat_buf(&buf));
-    let hash = hex::encode(hasher.finalize());
-
-    println!("Result:");
-    println!("  input: {}", hex::encode(convert_fat_buf(&buf)));
-    println!("  sha256: {}", hash);
-    println!("  elapsed: {:?}", start.elapsed());
-    exit(0);
-}
-
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
+    let program_start = Instant::now();
     set_up_logger();
 
     let args = Args::parse();
     let runs_per_dispatch = args.dispatch_x * args.workgroup_size;
 
-    println!("Args: {:?}", args);
+    eprintln!("Args: {:?}", args);
 
     let arg_start = hex::decode(args.start.as_ref().map(|x| x.as_str()).unwrap_or_default())?;
     if arg_start.len() > 32 {
@@ -282,16 +270,16 @@ async fn main() -> anyhow::Result<()> {
     input_data[..arg_start.len()].copy_from_slice(&arg_start);
     let mut result = [0_u32; SHA256_BYTES];
     let mut counter = 0_usize;
-    let start = Instant::now();
+    let compute_start = Instant::now();
     let mut hashes = 0_u64;
     loop {
-        println!(
+        eprintln!(
             "dispatch: {}, start: {}, elapsed: {:?}, hashes: {}, hashrate: {} H/s",
             counter,
             hex::encode(input_data),
-            start.elapsed(),
+            compute_start.elapsed(),
             hashes.to_formatted_string(&Locale::en),
-            ((hashes as f64 / start.elapsed().as_secs_f64()).round() as u64)
+            ((hashes as f64 / compute_start.elapsed().as_secs_f64()).round() as u64)
                 .to_formatted_string(&Locale::en)
         );
         state.write_input_data(&input_data);
@@ -301,7 +289,18 @@ async fn main() -> anyhow::Result<()> {
         add_big_int(&mut input_data, hashes_computed);
         state.read_result(cast_slice_mut(&mut result)).await?;
         if result.iter().any(|x| *x != 0) {
-            print_result_and_exit(result, start);
+            // print result and exit
+            use sha2::Digest;
+            let mut hasher = sha2::Sha256::new();
+            hasher.update(convert_fat_buf(&result));
+            let hash = hex::encode(hasher.finalize());
+
+            println!("Result:");
+            println!("  input: {}", hex::encode(convert_fat_buf(&result)));
+            println!("  sha256: {}", hash);
+            println!("  preparation time: {:?}", compute_start.duration_since(program_start));
+            println!("  computation elapsed: {:?}", compute_start.elapsed());
+            exit(0);
         }
         counter += 1;
     }
