@@ -1,4 +1,7 @@
-fn check_difficulty(buf: ptr<function, array<u32, SHA256_BLOCK_SIZE>>) -> bool { /* stub */; return true; }
+
+fn check_difficulty(buf: ptr<function, array<u32, SHA256_BLOCK_SIZE>>) -> bool {
+    return buf[0] == 0u && buf[1] == 0u && buf[2] == 0u && buf[3] == 0u;
+}
 
 // override WORKGROUP_SIZE = 0u;
 // override ITERATIONS_PER_THREAD = 0u;

@@ -2,15 +2,18 @@
 
 use anyhow::anyhow;
 use bytemuck::{cast_slice, cast_slice_mut};
+use std::borrow::Cow;
 use std::process::exit;
 use std::time::Instant;
 use tokio::sync::oneshot;
 use wgpu::wgt::PollType;
 use wgpu::{
-    Backends, BindGroup, BindGroupDescriptor, BindGroupEntry, BindingResource, Buffer,
-    BufferBinding, BufferDescriptor, BufferUsages, ComputePipeline, ComputePipelineDescriptor,
-    Device, Instance, InstanceDescriptor, MapMode, PipelineCompilationOptions, Queue,
-    ShaderModuleDescriptor, ShaderSource,
+    include_spirv_raw, include_wgsl, Backends, BindGroup, BindGroupDescriptor,
+    BindGroupEntry, BindGroupLayoutDescriptor, BindGroupLayoutEntry, BindingResource, BindingType, Buffer,
+    BufferBinding, BufferBindingType, BufferDescriptor, BufferUsages, ComputePipeline,
+    ComputePipelineDescriptor, Device, DeviceDescriptor, ExperimentalFeatures, Features, Instance,
+    InstanceDescriptor, MapMode, PipelineCompilationOptions, PipelineLayoutDescriptor,
+    Queue, ShaderModuleDescriptorPassthrough, ShaderStages,
 };
 
 /// Sha256 buffer type the shader uses.
@@ -37,7 +40,7 @@ struct Args {
     dispatch_x: u32,
 
     /// Number of hash iterations performed by each individual thread
-    #[arg(short, long, default_value_t = 256)]
+    #[arg(short, long, default_value_t = 64)]
     iterations: u32,
 
     /// Target difficulty in bits
@@ -66,26 +69,83 @@ impl State {
             ..default!()
         });
         let adapter = instance.request_adapter(&default!()).await?;
-        let (device, queue) = adapter.request_device(&default!()).await?;
+        let (device, queue) = adapter
+            .request_device(&DeviceDescriptor {
+                required_features: Features::EXPERIMENTAL_PASSTHROUGH_SHADERS,
+                experimental_features: unsafe { ExperimentalFeatures::enabled() },
+                ..default!()
+            })
+            .await?;
 
-        let shader_module = device.create_shader_module(ShaderModuleDescriptor {
+        // let shader_module = device.create_shader_module(ShaderModuleDescriptor {
+        //     label: None,
+        //     source: ShaderSource::Wgsl(wgsl_source(args.difficulty).into()),
+        // });
+        // let mut desc = include_spirv_raw!("../../shader.spv");
+        // desc.entry_point = "main".into();
+
+        // let desc = include_wgsl!("../../sha256-miner-d32.wgsl");
+
+        let desc = ShaderModuleDescriptorPassthrough {
+            entry_point: "main".to_string(),
             label: None,
-            source: ShaderSource::Wgsl(wgsl_source(args.difficulty).into()),
+            num_workgroups: (256, 0, 0),
+            runtime_checks: Default::default(),
+            spirv: None,
+            dxil: Some(Cow::Borrowed(include_bytes!("../../shader.dxil"))),
+            msl: None,
+            hlsl: None,
+            glsl: None,
+            wgsl: None,
+        };
+        let shader_module = unsafe { device.create_shader_module_passthrough(desc) };
+        // let shader_module = device.create_shader_module(desc);
+
+        let bind_group_layout = device.create_bind_group_layout(&BindGroupLayoutDescriptor {
+            label: None,
+            entries: &[
+                BindGroupLayoutEntry {
+                    binding: 0,
+                    visibility: ShaderStages::COMPUTE,
+                    ty: BindingType::Buffer {
+                        ty: BufferBindingType::Storage { read_only: true },
+                        has_dynamic_offset: false,
+                        min_binding_size: None,
+                    },
+                    count: None,
+                },
+                BindGroupLayoutEntry {
+                    binding: 1,
+                    visibility: ShaderStages::COMPUTE,
+                    ty: BindingType::Buffer {
+                        ty: BufferBindingType::Storage { read_only: false },
+                        has_dynamic_offset: false,
+                        min_binding_size: None,
+                    },
+                    count: None,
+                },
+            ],
+        });
+
+        let pipeline_layout = device.create_pipeline_layout(&PipelineLayoutDescriptor {
+            label: None,
+            bind_group_layouts: &[&bind_group_layout],
+            immediate_size: 0,
         });
         let pipeline = device.create_compute_pipeline(&ComputePipelineDescriptor {
             label: None,
-            layout: None,
+            layout: Some(&pipeline_layout),
             module: &shader_module,
-            entry_point: None,
+            entry_point: Some("main"),
             compilation_options: PipelineCompilationOptions {
                 constants: &[
-                    ("WORKGROUP_SIZE", args.workgroup_size as f64),
-                    ("ITERATIONS_PER_THREAD", args.iterations as f64),
-                    (
-                        "RUNS_PER_DISPATCH",
-                        (args.dispatch_x * args.workgroup_size) as f64,
-                    ),
-                    ("DIFFICULTY_BITS", args.difficulty as f64),
+                    // ("WORKGROUP_SIZE", args.workgroup_size as f64),
+                    // ("ITERATIONS_PER_THREAD", args.iterations as f64),
+                    // (
+                    //     "RUNS_PER_DISPATCH",
+                    //     (args.dispatch_x * args.workgroup_size) as f64,
+                    // ),
+                    // ("DIFFICULTY_BITS", args.difficulty as f64),
                 ],
                 zero_initialize_workgroup_memory: false,
             },
@@ -113,7 +173,7 @@ impl State {
 
         let bind_group = device.create_bind_group(&BindGroupDescriptor {
             label: None,
-            layout: &pipeline.get_bind_group_layout(0),
+            layout: &bind_group_layout,
             entries: &[
                 BindGroupEntry {
                     binding: 0,
@@ -298,7 +358,10 @@ async fn main() -> anyhow::Result<()> {
             println!("Result:");
             println!("  input: {}", hex::encode(convert_fat_buf(&result)));
             println!("  sha256: {}", hash);
-            println!("  preparation time: {:?}", compute_start.duration_since(program_start));
+            println!(
+                "  preparation time: {:?}",
+                compute_start.duration_since(program_start)
+            );
             println!("  computation elapsed: {:?}", compute_start.elapsed());
             exit(0);
         }
